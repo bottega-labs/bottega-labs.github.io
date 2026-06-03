@@ -225,34 +225,6 @@ button { cursor: pointer; font-family: var(--font); }
   line-height: 1.5;
 }
 
-/* ─── Screenshots ───────────────────────────────────────────────────────── */
-.screenshots-scroll {
-  display: flex;
-  gap: 12px;
-  overflow-x: auto;
-  padding: 4px 2px 12px;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-.screenshots-scroll::-webkit-scrollbar { display: none; }
-.screenshot-frame {
-  flex: 0 0 140px;
-  height: 280px;
-  border-radius: var(--radius-lg);
-  border: 2px dashed var(--border);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  color: var(--text-tertiary);
-  font-size: 11px;
-  text-align: center;
-  background: var(--bg-subtle);
-  padding: 12px;
-}
-.screenshot-frame svg { opacity: 0.4; }
-
 /* ─── Support ───────────────────────────────────────────────────────────── */
 .support-card {
   background: var(--bg-subtle);
