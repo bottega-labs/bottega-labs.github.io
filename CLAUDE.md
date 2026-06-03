@@ -37,8 +37,8 @@ bottega-labs.github.io/
 | Slug | Name | App Store ID | Accent | Status |
 |------|------|-------------|--------|--------|
 | `card-memorizer` | Card Memorizer | `6504581198` | `#7C3AED` | Live |
-| `my-tally` | My Tally | — | `#0A84FF` | In review |
-| `tia` | TIA (Today I Ate) | — | `#FF6B6B` | In review |
+| `my-tally` | My Tally | — | `#0A84FF` | Live |
+| `tia` | TIA (Today I Ate) | — | `#FF6B6B` | Live |
 
 ## URLs (register in App Store Connect)
 

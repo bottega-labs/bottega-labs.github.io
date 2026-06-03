@@ -38,7 +38,7 @@
     en: Count anything, simply
   accent: "#0A84FF"
   accent_rgb: "10, 132, 255"
-  status: review
+  status: live
   app_store_id: null
   google_play_id: null
   features:
@@ -71,7 +71,7 @@
     en: Remember what you ate with beautiful photos
   accent: "#FF6B6B"
   accent_rgb: "255, 107, 107"
-  status: review
+  status: live
   app_store_id: null
   google_play_id: null
   features:
