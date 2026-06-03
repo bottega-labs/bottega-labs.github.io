@@ -1,0 +1,98 @@
+- id: card-memorizer
+  name: Card Memorizer
+  tagline:
+    ko: 카드로 외우는 가장 스마트한 방법
+    en: The smartest way to memorize with cards
+  accent: "#7C3AED"
+  accent_rgb: "124, 58, 237"
+  status: live
+  app_store_id: "6504581198"
+  google_play_id: null
+  features:
+    - icon: "🃏"
+      title:
+        ko: 플래시카드
+        en: Flashcards
+      desc:
+        ko: 앞뒤 카드로 핵심 내용을 빠르게 암기하세요
+        en: Memorize key content quickly with front/back flashcards
+    - icon: "📚"
+      title:
+        ko: 덱 관리
+        en: Deck Management
+      desc:
+        ko: 주제별로 카드 덱을 구성하고 체계적으로 학습하세요
+        en: Organize cards into topic-based decks for systematic study
+    - icon: "🎯"
+      title:
+        ko: 집중 학습
+        en: Focused Study
+      desc:
+        ko: 필요한 카드만 반복 학습하여 학습 효율을 높이세요
+        en: Boost efficiency by repeatedly studying only the cards you need
+
+- id: my-tally
+  name: My Tally
+  tagline:
+    ko: 무엇이든 간편하게 세어보세요
+    en: Count anything, simply
+  accent: "#0A84FF"
+  accent_rgb: "10, 132, 255"
+  status: review
+  app_store_id: null
+  google_play_id: null
+  features:
+    - icon: "👆"
+      title:
+        ko: 원터치 카운팅
+        en: One-Touch Count
+      desc:
+        ko: 탭 한 번으로 즉시 카운트, 직관적인 인터페이스
+        en: Instantly count with one tap, intuitive interface
+    - icon: "📊"
+      title:
+        ko: 다중 카운터
+        en: Multiple Counters
+      desc:
+        ko: 여러 항목을 동시에 추적하고 관리하세요
+        en: Track and manage multiple items simultaneously
+    - icon: "📈"
+      title:
+        ko: 기록 관리
+        en: History Tracking
+      desc:
+        ko: 카운팅 기록을 보관하고 언제든지 확인하세요
+        en: Keep your counting history and review it anytime
+
+- id: tia
+  name: TIA (Today I Ate)
+  tagline:
+    ko: 오늘 먹은 것들, 사진으로 기억하세요
+    en: Remember what you ate with beautiful photos
+  accent: "#FF6B6B"
+  accent_rgb: "255, 107, 107"
+  status: review
+  app_store_id: null
+  google_play_id: null
+  features:
+    - icon: "📸"
+      title:
+        ko: 사진 일기
+        en: Photo Diary
+      desc:
+        ko: 음식 사진과 메모를 날짜별로 체계적으로 기록하세요
+        en: Record food photos and memos organized by date
+    - icon: "🗺️"
+      title:
+        ko: 지도 시각화
+        en: Map View
+      desc:
+        ko: 어디서 무엇을 먹었는지 지도에서 한눈에 확인하세요
+        en: See where and what you ate at a glance on the map
+    - icon: "🔒"
+      title:
+        ko: 나만의 공간
+        en: Private & Secure
+      desc:
+        ko: 내 데이터는 오직 나만 볼 수 있도록 안전하게 보관됩니다
+        en: Your data is safely stored and accessible only by you

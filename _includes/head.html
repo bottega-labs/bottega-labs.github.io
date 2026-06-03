@@ -1,0 +1,7 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page.title | default: site.title }}</title>
+<meta name="description" content="{{ page.description | default: site.description }}">
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+{% if page.accent %}<style>:root { --accent: {{ page.accent }}; --accent-rgb: {{ page.accent_rgb }}; }</style>{% endif %}
+{% seo %}

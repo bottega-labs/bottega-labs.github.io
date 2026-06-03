@@ -1,0 +1,5 @@
+<div class="lang-bar">
+  {% for lang in site.langs %}
+  <button class="lang-btn" data-lang-btn="{{ lang.code }}" onclick="setLang('{{ lang.code }}')">{{ lang.label }}</button>
+  {% endfor %}
+</div>

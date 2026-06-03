@@ -1,183 +1,99 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>개인정보 처리방침 - My Tally</title>
-    <style>
-        /* 기본 스타일 설정 */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-            background-color: #f9f9f9;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        
-        /* 타이틀 및 헤더 */
-        h1 { font-size: 24px; margin-bottom: 10px; color: #111; }
-        h2 { font-size: 20px; margin-top: 30px; margin-bottom: 15px; color: #222; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        h3 { font-size: 18px; margin-top: 25px; margin-bottom: 10px; color: #444; }
-        
-        /* 본문 텍스트 */
-        p { margin-bottom: 15px; color: #555; word-break: keep-all; }
-        ul { margin-bottom: 20px; padding-left: 20px; }
-        li { margin-bottom: 8px; color: #555; }
-        a { color: #007bff; text-decoration: none; }
-        a:hover { text-decoration: underline; }
+---
+layout: privacy
+app_id: my-tally
+title: "개인정보처리방침 - My Tally"
+---
 
-        /* 언어 선택 네비게이션 */
-        .lang-nav {
-            text-align: right;
-            margin-bottom: 20px;
-            font-size: 14px;
-        }
-        .lang-nav a {
-            margin-left: 10px;
-            font-weight: bold;
-            color: #666;
-        }
-        .lang-nav a.active { color: #007bff; }
+<div data-lang="ko">
+  <h1>개인정보 처리방침</h1>
+  <p class="effective-date">시행일: 2026년 1월 4일</p>
 
-        /* 구분선 */
-        hr.divider {
-            border: 0;
-            border-top: 1px dashed #ccc;
-            margin: 50px 0;
-        }
+  <p>My Tally 개발자(이하 "개발자")는 사용자의 개인정보를 소중히 여기며, '개인정보 보호법' 등 관련 법령을 준수합니다. 본 개인정보 처리방침은 'My Tally'(이하 "앱")를 이용하는 사용자의 개인정보가 어떻게 수집, 이용, 보호되는지 설명합니다.</p>
 
-        /* 모바일 최적화 */
-        @media (max-width: 600px) {
-            body { padding: 10px; }
-            .container { padding: 20px; }
-            h1 { font-size: 20px; }
-            h2 { font-size: 18px; }
-        }
-    </style>
-</head>
-<body>
+  <h3>1. 수집하는 개인정보 항목 및 방법</h3>
+  <p>본 앱은 별도의 회원가입 절차 없이 이용 가능하며, 개발자는 사용자의 이름, 전화번호, 주소 등의 개인 식별 정보를 서버에 직접 저장하지 않습니다.</p>
+  <p>앱 내 광고 서비스 제공 및 앱 개선을 위해 제3자(Third Party) 서비스 제공자에 의해 다음과 같은 정보가 자동으로 수집될 수 있습니다.</p>
+  <ul>
+    <li><strong>광고 식별자(Advertising ID):</strong> Android ADID, iOS IDFA</li>
+    <li><strong>기기 정보:</strong> 기기 모델명, OS 버전, 언어 설정, IP 주소, 네트워크 상태</li>
+    <li><strong>앱 이용 기록:</strong> 쿠키(Cookie), 방문 기록, 접속 로그, 서비스 이용 시간</li>
+  </ul>
 
-<div class="container">
-    
-    <div class="lang-nav">
-        <a href="#kr" class="active">🇰🇷 한국어</a>
-        <a href="#en">🇺🇸 English</a>
-    </div>
+  <h3>2. 개인정보의 수집 및 이용 목적</h3>
+  <p>수집된 정보는 다음의 목적으로만 이용됩니다.</p>
+  <ol>
+    <li><strong>맞춤형 광고 제공:</strong> Google AdMob을 통해 사용자의 관심사에 맞는 광고를 노출하기 위함</li>
+    <li><strong>서비스 개선:</strong> Google Firebase Analytics를 통해 앱의 오류를 분석하고 성능을 최적화하기 위함</li>
+  </ol>
 
-    <div id="kr">
-        <h1>개인정보 처리방침</h1>
-        <p><strong>시행일: 2026년 1월 4일</strong></p>
-        
-        <p>
-            My Tally 개발자(이하 "개발자")는 사용자의 개인정보를 소중히 여기며, '개인정보 보호법' 등 관련 법령을 준수합니다. 
-            본 개인정보 처리방침은 'My Tally'(이하 "앱")을 이용하는 사용자의 개인정보가 어떻게 수집, 이용, 보호되는지 설명합니다.
-        </p>
+  <h3>3. 개인정보의 제3자 제공</h3>
+  <p>본 앱은 서비스 제공을 위해 다음과 같은 외부 전문 업체에 제한된 범위 내에서 정보를 제공(위탁)하고 있습니다.</p>
+  <ul>
+    <li><strong>Google AdMob (광고):</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a></li>
+    <li><strong>Google Firebase (분석):</strong> <a href="https://firebase.google.com/policies/analytics" target="_blank" rel="noopener">https://firebase.google.com/policies/analytics</a></li>
+  </ul>
 
-        <h3>1. 수집하는 개인정보 항목 및 방법</h3>
-        <p>본 앱은 별도의 회원가입 절차 없이 이용 가능하며, 개발자는 사용자의 이름, 전화번호, 주소 등의 개인 식별 정보를 서버에 직접 저장하지 않습니다.</p>
-        <p>다만, 앱 내 광고 서비스 제공 및 앱 개선을 위해 제3자(Third Party) 서비스 제공자에 의해 다음과 같은 정보가 자동으로 수집될 수 있습니다.</p>
-        <ul>
-            <li><strong>광고 식별자(Advertising ID):</strong> Android ADID, iOS IDFA</li>
-            <li><strong>기기 정보:</strong> 기기 모델명, OS 버전, 언어 설정, IP 주소, 네트워크 상태</li>
-            <li><strong>앱 이용 기록:</strong> 쿠키(Cookie), 방문 기록, 접속 로그, 서비스 이용 시간</li>
-        </ul>
+  <h3>4. 사용자 및 법정대리인의 권리</h3>
+  <p>사용자는 언제든지 기기 설정을 통해 맞춤형 광고 식별자 수집을 거부할 수 있습니다.</p>
+  <ul>
+    <li><strong>iOS:</strong> 설정 &gt; 개인정보 보호 및 보안 &gt; 추적 &gt; My Tally 비활성화</li>
+    <li><strong>Android:</strong> 설정 &gt; Google &gt; 광고 &gt; 광고 ID 삭제 또는 재설정</li>
+  </ul>
 
-        <h3>2. 개인정보의 수집 및 이용 목적</h3>
-        <p>수집된 정보는 다음의 목적으로만 이용됩니다.</p>
-        <ol>
-            <li><strong>맞춤형 광고 제공:</strong> Google AdMob을 통해 사용자의 관심사에 맞는 광고를 노출하기 위함</li>
-            <li><strong>서비스 개선:</strong> Google Firebase Analytics를 통해 앱의 오류를 분석하고 성능을 최적화하기 위함</li>
-        </ol>
+  <h3>5. 아동의 개인정보 보호</h3>
+  <p>본 앱은 만 14세 미만 아동의 개인정보를 고의로 수집하지 않습니다. 만약 아동의 개인정보가 수집된 사실을 인지하게 될 경우, 즉시 해당 정보를 파기할 것입니다.</p>
 
-        <h3>3. 개인정보의 제3자 제공</h3>
-        <p>본 앱은 서비스 제공을 위해 다음과 같은 외부 전문 업체에 제한된 범위 내에서 정보를 제공(위탁)하고 있습니다. 각 서비스의 개인정보 처리방침은 아래 링크에서 확인할 수 있습니다.</p>
-        <ul>
-            <li><strong>Google AdMob (광고):</strong> <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></li>
-            <li><strong>Google Firebase (분석):</strong> <a href="https://firebase.google.com/policies/analytics" target="_blank">https://firebase.google.com/policies/analytics</a></li>
-        </ul>
-
-        <h3>4. 사용자 및 법정대리인의 권리</h3>
-        <p>사용자는 언제든지 기기 설정을 통해 맞춤형 광고 식별자 수집을 거부할 수 있습니다.</p>
-        <ul>
-            <li><strong>iOS:</strong> 설정 > 개인정보 보호 및 보안 > 추적 > My Tally 비활성화</li>
-            <li><strong>Android:</strong> 설정 > Google > 광고 > 광고 ID 삭제 또는 재설정</li>
-        </ul>
-
-        <h3>5. 아동의 개인정보 보호</h3>
-        <p>본 앱은 만 14세 미만 아동의 개인정보를 고의로 수집하지 않습니다. 만약 아동의 개인정보가 수집된 사실을 인지하게 될 경우, 즉시 해당 정보를 파기할 것입니다.</p>
-
-        <h3>6. 문의처</h3>
-        <ul>
-            <li><strong>담당:</strong> My Tally 개발자</li>
-            <li><strong>이메일:</strong> <a href="mailto:auspicioussource@gmail.com">auspicioussource@gmail.com</a></li>
-        </ul>
-    </div>
-
-    <hr class="divider">
-
-    <div id="en">
-        <h1>Privacy Policy</h1>
-        <p><strong>Last Updated: January 4, 2026</strong></p>
-
-        <p>
-            My Tally Developer (hereinafter referred to as "the Developer") values your privacy and complies with applicable laws and regulations. 
-            This Privacy Policy explains how the "My Tally" app (hereinafter referred to as "the App") collects, uses, and protects user information.
-        </p>
-
-        <h3>1. Information Collection</h3>
-        <p>The App does not require user registration, and the Developer does not directly collect or store personal identification information such as names, phone numbers, or addresses on our servers.</p>
-        <p>However, for the purpose of providing in-app advertising and improving services, the following information may be automatically collected by third-party service providers:</p>
-        <ul>
-            <li><strong>Advertising ID:</strong> Android ADID, iOS IDFA</li>
-            <li><strong>Device Information:</strong> Device model, OS version, language settings, IP address, network status</li>
-            <li><strong>Usage Data:</strong> Cookies, visit history, access logs, service usage time</li>
-        </ul>
-
-        <h3>2. Purpose of Collection and Use</h3>
-        <p>The collected information is used solely for the following purposes:</p>
-        <ol>
-            <li><strong>Targeted Advertising:</strong> To display ads relevant to user interests via Google AdMob.</li>
-            <li><strong>Service Improvement:</strong> To analyze app errors and optimize performance via Google Firebase Analytics.</li>
-        </ol>
-
-        <h3>3. Third-Party Disclosure</h3>
-        <p>The App provides information to the following external professional companies within a limited scope to provide services. You can check the privacy policy of each service at the links below.</p>
-        <ul>
-            <li><strong>Google AdMob (Ads):</strong> <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></li>
-            <li><strong>Google Firebase (Analytics):</strong> <a href="https://firebase.google.com/policies/analytics" target="_blank">https://firebase.google.com/policies/analytics</a></li>
-        </ul>
-
-        <h3>4. User Rights</h3>
-        <p>Users can opt-out of the collection of personalized advertising identifiers at any time via device settings.</p>
-        <ul>
-            <li><strong>iOS:</strong> Settings > Privacy & Security > Tracking > Toggle off for My Tally</li>
-            <li><strong>Android:</strong> Settings > Google > Ads > Delete advertising ID or Reset advertising ID</li>
-        </ul>
-
-        <h3>5. Children's Privacy</h3>
-        <p>The App does not knowingly collect personal information from children under the age of 13 (or applicable age in your jurisdiction). If we become aware that we have collected personal information from a child, we will take steps to delete such information immediately.</p>
-
-        <h3>6. Contact Us</h3>
-        <ul>
-            <li><strong>Contact:</strong> My Tally Developer</li>
-            <li><strong>Email:</strong> <a href="mailto:auspicioussource@gmail.com">auspicioussource@gmail.com</a></li>
-        </ul>
-    </div>
-
-    <div style="text-align: center; margin-top: 50px; font-size: 12px; color: #999;">
-        &copy; 2026 My Tally Developer. All rights reserved.
-    </div>
-
+  <h3>6. 문의처</h3>
+  <ul>
+    <li><strong>담당:</strong> My Tally 개발자</li>
+    <li><strong>이메일:</strong> <a href="mailto:auspicioussource@gmail.com">auspicioussource@gmail.com</a></li>
+  </ul>
 </div>
 
-</body>
-</html>
+<hr class="privacy-divider">
+
+<div data-lang="en">
+  <h1>Privacy Policy</h1>
+  <p class="effective-date">Last Updated: January 4, 2026</p>
+
+  <p>The My Tally developer (hereinafter "the Developer") values your privacy and complies with applicable laws and regulations. This Privacy Policy explains how the "My Tally" app collects, uses, and protects user information.</p>
+
+  <h3>1. Information Collection</h3>
+  <p>The App does not require user registration, and the Developer does not directly collect or store personal identification information such as names, phone numbers, or addresses on our servers.</p>
+  <p>For the purpose of providing in-app advertising and improving services, the following information may be automatically collected by third-party service providers:</p>
+  <ul>
+    <li><strong>Advertising ID:</strong> Android ADID, iOS IDFA</li>
+    <li><strong>Device Information:</strong> Device model, OS version, language settings, IP address, network status</li>
+    <li><strong>Usage Data:</strong> Cookies, visit history, access logs, service usage time</li>
+  </ul>
+
+  <h3>2. Purpose of Collection and Use</h3>
+  <p>The collected information is used solely for the following purposes:</p>
+  <ol>
+    <li><strong>Targeted Advertising:</strong> To display ads relevant to user interests via Google AdMob.</li>
+    <li><strong>Service Improvement:</strong> To analyze app errors and optimize performance via Google Firebase Analytics.</li>
+  </ol>
+
+  <h3>3. Third-Party Disclosure</h3>
+  <p>The App provides information to the following external professional companies within a limited scope to provide services.</p>
+  <ul>
+    <li><strong>Google AdMob (Ads):</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a></li>
+    <li><strong>Google Firebase (Analytics):</strong> <a href="https://firebase.google.com/policies/analytics" target="_blank" rel="noopener">https://firebase.google.com/policies/analytics</a></li>
+  </ul>
+
+  <h3>4. User Rights</h3>
+  <p>Users can opt-out of the collection of personalized advertising identifiers at any time via device settings.</p>
+  <ul>
+    <li><strong>iOS:</strong> Settings &gt; Privacy &amp; Security &gt; Tracking &gt; Toggle off for My Tally</li>
+    <li><strong>Android:</strong> Settings &gt; Google &gt; Ads &gt; Delete advertising ID or Reset advertising ID</li>
+  </ul>
+
+  <h3>5. Children's Privacy</h3>
+  <p>The App does not knowingly collect personal information from children under the age of 13. If we become aware that we have collected personal information from a child, we will take steps to delete such information immediately.</p>
+
+  <h3>6. Contact Us</h3>
+  <ul>
+    <li><strong>Contact:</strong> My Tally Developer</li>
+    <li><strong>Email:</strong> <a href="mailto:auspicioussource@gmail.com">auspicioussource@gmail.com</a></li>
+  </ul>
+</div>

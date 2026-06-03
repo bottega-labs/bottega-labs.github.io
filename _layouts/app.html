@@ -1,0 +1,139 @@
+---
+layout: default
+---
+{% assign app = site.data.apps | where: "id", page.app_id | first %}
+{% assign ko = site.data.i18n.ko %}
+{% assign en = site.data.i18n.en %}
+
+<style>
+  :root {
+    --accent: {{ app.accent }};
+    --accent-rgb: {{ app.accent_rgb }};
+  }
+</style>
+
+<div class="app-page">
+
+  {% include lang-switcher.html %}
+
+  <div class="hero">
+    <img src="{{ '/assets/images/' | append: app.id | append: '/icon.png' | relative_url }}"
+         alt="{{ app.name }}"
+         width="112" height="112"
+         class="app-icon"
+         onerror="this.src='{{ '/assets/images/default-icon.png' | relative_url }}'">
+    <h1 class="app-name">{{ app.name }}</h1>
+    <p class="app-tagline">
+      <span data-lang="ko">{{ app.tagline.ko }}</span>
+      <span data-lang="en">{{ app.tagline.en }}</span>
+    </p>
+    {% if app.status == "live" %}
+    <span class="status-badge live">
+      <span data-lang="ko">{{ ko.status_live }}</span>
+      <span data-lang="en">{{ en.status_live }}</span>
+    </span>
+    {% else %}
+    <span class="status-badge review">
+      <span data-lang="ko">{{ ko.status_review }}</span>
+      <span data-lang="en">{{ en.status_review }}</span>
+    </span>
+    {% endif %}
+  </div>
+
+  <div class="store-section">
+    {% if app.app_store_id %}
+    <a href="https://apps.apple.com/app/id{{ app.app_store_id }}"
+       class="btn-store ios" target="_blank" rel="noopener">
+      <svg width="20" height="20" viewBox="0 0 814 1000" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-37.5-166.2-122.5C76.3 777.5 24.7 709.1 1 614.2c-8.4-33.8-12.6-68.3-12.6-102.2C-11.6 311.8 139 194 279 194c65.3 0 120.8 42.8 162.1 42.8 39.5 0 103.1-45.3 177.4-45.3zM437.5.4c7.1-78.6 68.7-140.5 140.7-140.5 7.1 0 14.8.6 22.5 1.9-7.1 74.3-68.7 140.5-142 140.5-6.5 0-13.5-.6-21.2-1.9z"/>
+      </svg>
+      <span data-lang="ko">{{ ko.download_ios }}</span>
+      <span data-lang="en">{{ en.download_ios }}</span>
+    </a>
+    {% else %}
+    <div class="btn-coming-soon">
+      <span data-lang="ko">{{ ko.coming_soon }}</span>
+      <span data-lang="en">{{ en.coming_soon }}</span>
+    </div>
+    {% endif %}
+
+    {% if app.google_play_id %}
+    <a href="https://play.google.com/store/apps/details?id={{ app.google_play_id }}"
+       class="btn-store android" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3.18 23.76c.36.2.78.22 1.16.04l11.84-6.8-2.56-2.56-10.44 9.32zM.5 1.66C.18 2.02 0 2.56 0 3.26v17.48c0 .7.18 1.24.5 1.6l.08.08L9.88 12v-.22L.58 1.58l-.08.08zM21.32 9.6l-2.66-1.52-2.82 2.82 2.82 2.82 2.68-1.54c.76-.44.76-1.14-.02-1.58zM4.34.24L16.18 7.06l-2.56 2.56L3.18.3c.38-.2.8-.18 1.16-.06z"/>
+      </svg>
+      <span data-lang="ko">{{ ko.download_android }}</span>
+      <span data-lang="en">{{ en.download_android }}</span>
+    </a>
+    {% endif %}
+  </div>
+
+  <div class="section">
+    <div class="section-title">
+      <span data-lang="ko">{{ ko.features }}</span>
+      <span data-lang="en">{{ en.features }}</span>
+    </div>
+    <div class="features-grid">
+      {% for feature in app.features %}
+      <div class="feature-card">
+        <div class="feature-icon">{{ feature.icon }}</div>
+        <div class="feature-title">
+          <span data-lang="ko">{{ feature.title.ko }}</span>
+          <span data-lang="en">{{ feature.title.en }}</span>
+        </div>
+        <div class="feature-desc">
+          <span data-lang="ko">{{ feature.desc.ko }}</span>
+          <span data-lang="en">{{ feature.desc.en }}</span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">
+      <span data-lang="ko">{{ ko.screenshots }}</span>
+      <span data-lang="en">{{ en.screenshots }}</span>
+    </div>
+    <div class="screenshots-scroll">
+      {% for i in (1..4) %}
+      <div class="screenshot-frame">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
+          <rect x="5" y="2" width="14" height="20" rx="2"/>
+          <line x1="9" y1="6" x2="15" y2="6"/>
+        </svg>
+        <span data-lang="ko">{{ ko.screenshots_placeholder }}</span>
+        <span data-lang="en">{{ en.screenshots_placeholder }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">
+      <span data-lang="ko">{{ ko.support }}</span>
+      <span data-lang="en">{{ en.support }}</span>
+    </div>
+    <div class="support-card">
+      <p class="support-desc">
+        <span data-lang="ko">{{ ko.support_desc }}</span>
+        <span data-lang="en">{{ en.support_desc }}</span>
+      </p>
+      <a href="mailto:{{ site.contact_email }}" class="btn-contact">
+        ✉️&nbsp;
+        <span data-lang="ko">{{ ko.contact_btn }}</span>
+        <span data-lang="en">{{ en.contact_btn }}</span>
+      </a>
+    </div>
+  </div>
+
+  <footer class="app-footer">
+    <a href="privacy.html">
+      <span data-lang="ko">{{ ko.privacy_link }}</span>
+      <span data-lang="en">{{ en.privacy_link }}</span>
+    </a>
+    <p class="footer-copy">&copy; {{ 'now' | date: "%Y" }} {{ app.name }}. {{ en.all_rights }}</p>
+  </footer>
+
+</div>

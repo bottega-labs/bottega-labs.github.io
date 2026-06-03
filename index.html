@@ -1,9 +1,59 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>403 Forbidden</title>
-</head>
-<body style="font-family: sans-serif; text-align: center; padding-top: 50px; color: #333;">
-    <h1>403 Forbidden</h1>
-    <p>You do not have permission to access this resource.</p>
-</html>
+---
+layout: default
+title: "Bottega Labs — Mobile Apps"
+description: "Mobile apps crafted by Bottega Labs"
+---
+{% assign ko = site.data.i18n.ko %}
+{% assign en = site.data.i18n.en %}
+
+<div class="root-page">
+  {% include lang-switcher.html %}
+
+  <div class="root-header">
+    <div class="root-logo">bottega<span>labs</span></div>
+    <p class="root-subtitle">
+      <span data-lang="ko">{{ ko.apps_desc }}</span>
+      <span data-lang="en">{{ en.apps_desc }}</span>
+    </p>
+  </div>
+
+  <div class="apps-grid">
+    {% for app in site.data.apps %}
+    <a href="{{ app.id }}/" class="app-card" style="--accent: {{ app.accent }}; --accent-rgb: {{ app.accent_rgb }};">
+      <div class="app-card-top">
+        <img src="{{ '/assets/images/' | append: app.id | append: '/icon.png' | relative_url }}"
+             alt="{{ app.name }}"
+             class="app-card-icon">
+        <div>
+          <div class="app-card-name">{{ app.name }}</div>
+          {% if app.status == "live" %}
+          <span class="status-badge live" style="margin-top:4px; font-size:11px;">
+            <span data-lang="ko">{{ ko.status_live }}</span>
+            <span data-lang="en">{{ en.status_live }}</span>
+          </span>
+          {% else %}
+          <span class="status-badge review" style="margin-top:4px; font-size:11px;">
+            <span data-lang="ko">{{ ko.status_review }}</span>
+            <span data-lang="en">{{ en.status_review }}</span>
+          </span>
+          {% endif %}
+        </div>
+      </div>
+      <p class="app-card-tagline">
+        <span data-lang="ko">{{ app.tagline.ko }}</span>
+        <span data-lang="en">{{ app.tagline.en }}</span>
+      </p>
+      <div class="app-card-footer">
+        <span class="app-card-link">
+          <span data-lang="ko">자세히 보기 →</span>
+          <span data-lang="en">Learn more →</span>
+        </span>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+
+  <div class="root-footer">
+    &copy; {{ 'now' | date: "%Y" }} Bottega Labs. All rights reserved.
+  </div>
+</div>

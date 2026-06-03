@@ -1,0 +1,23 @@
+title: Bottega Labs
+description: Mobile apps crafted by Bottega Labs
+baseurl: ""
+url: "https://bottega-labs.github.io"
+
+contact_email: auspicioussource@gmail.com
+
+langs:
+  - code: ko
+    label: 한국어
+  - code: en
+    label: English
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - CLAUDE.md
+  - vendor/
+  - "*.sh"
