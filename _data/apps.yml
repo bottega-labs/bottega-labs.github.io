@@ -9,6 +9,13 @@
   app_store_id: "6504581198"
   google_play_id: null
   features:
+    - icon: "📷"
+      title:
+        ko: 카메라로 카드 생성
+        en: Create Cards with Camera
+      desc:
+        ko: 사진 속 글자를 인식해 카드를 자동으로 만드세요
+        en: Recognize text in photos to create cards automatically
     - icon: "🃏"
       title:
         ko: 플래시카드
