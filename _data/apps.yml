@@ -41,35 +41,42 @@
 - id: my-tally
   name: My Tally
   tagline:
-    ko: 무엇이든 간편하게 세어보세요
-    en: Count anything, simply
+    ko: 시간·횟수·금액, 기록하고 목표까지
+    en: Track time, counts & money — reach your goals
   accent: "#0A84FF"
   accent_rgb: "10, 132, 255"
   status: live
   app_store_id: "6757023908"
   google_play_id: null
   features:
-    - icon: "👆"
+    - icon: "📝"
       title:
-        ko: 원터치 카운팅
-        en: One-Touch Count
+        ko: 무엇이든 기록
+        en: Log Anything
       desc:
-        ko: 탭 한 번으로 즉시 카운트, 직관적인 인터페이스
-        en: Instantly count with one tap, intuitive interface
+        ko: 시간(분)·체크(횟수)·금액 등 원하는 방식으로 일상을 기록하세요
+        en: Record your day as time (minutes), checks (counts), or money
+    - icon: "🎯"
+      title:
+        ko: 목표 추적
+        en: Goal Tracking
+      desc:
+        ko: 월·분기·맞춤 기간 목표를 세우고 대시보드에서 진행률을 한눈에 확인하세요
+        en: Set monthly, quarterly, or custom-period goals and see progress at a glance
     - icon: "📊"
       title:
-        ko: 다중 카운터
-        en: Multiple Counters
+        ko: 기간별 이력
+        en: Period History
       desc:
-        ko: 여러 항목을 동시에 추적하고 관리하세요
-        en: Track and manage multiple items simultaneously
-    - icon: "📈"
+        ko: 월·분기·맞춤 기간으로 기록을 집계해 추세를 확인하세요
+        en: Aggregate records by month, quarter, or custom period to spot trends
+    - icon: "🏷️"
       title:
-        ko: 기록 관리
-        en: History Tracking
+        ko: 태그 분류
+        en: Tag Organization
       desc:
-        ko: 카운팅 기록을 보관하고 언제든지 확인하세요
-        en: Keep your counting history and review it anytime
+        ko: "#태그로 항목을 분류하고 관심 태그를 대시보드에 고정하세요"
+        en: Organize entries with #tags and pin the ones you care about
 
 - id: tia
   name: TIA (Today I Ate)
