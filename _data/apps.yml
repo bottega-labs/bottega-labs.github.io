@@ -46,7 +46,7 @@
   accent: "#0A84FF"
   accent_rgb: "10, 132, 255"
   status: live
-  app_store_id: null
+  app_store_id: "6757023908"
   google_play_id: null
   features:
     - icon: "👆"
