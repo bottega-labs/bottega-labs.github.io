@@ -39,6 +39,7 @@ bottega-labs.github.io/
 | `card-memorizer` | Card Memorizer | `6504581198` | `#7C3AED` | Live |
 | `my-tally` | My Tally | — | `#0A84FF` | Live |
 | `tia` | TIA (Today I Ate) | — | `#FF6B6B` | Live |
+| `notch` | Notch | `6745078620` | `#6EE7A0` | Live |
 
 ## URLs (register in App Store Connect)
 

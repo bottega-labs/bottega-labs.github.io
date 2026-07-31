@@ -110,3 +110,43 @@
       desc:
         ko: 내 데이터는 오직 나만 볼 수 있도록 안전하게 보관됩니다
         en: Your data is safely stored and accessible only by you
+
+- id: notch
+  name: Notch
+  tagline:
+    ko: 연동 없이 쓰는 자산 결산 일기
+    en: A privacy-first net worth journal
+  accent: "#6EE7A0"
+  accent_rgb: "110, 231, 160"
+  status: live
+  app_store_id: "6745078620"
+  google_play_id: null
+  features:
+    - icon: "📸"
+      title:
+        ko: 자산 스냅샷
+        en: Asset Snapshots
+      desc:
+        ko: 월말마다 자산과 부채를 스냅샷으로 기록하세요
+        en: Record your assets and liabilities as monthly snapshots
+    - icon: "📈"
+      title:
+        ko: 순자산 추이
+        en: Net Worth Trends
+      desc:
+        ko: 순자산의 흐름을 차트와 월/분기/연간 결산으로 확인하세요
+        en: Track your net worth with charts and monthly, quarterly, yearly reviews
+    - icon: "🎯"
+      title:
+        ko: 목표 예측
+        en: Goal Projection
+      desc:
+        ko: 목표 금액을 정하면 최근 추세로 달성 예상일을 알려드려요
+        en: Set a target and see your projected achievement date from recent trends
+    - icon: "🔒"
+      title:
+        ko: 완전 로컬 저장
+        en: Fully On-Device
+      desc:
+        ko: 계정도 서버도 없이 모든 자산 데이터는 기기 안에만 저장됩니다
+        en: No accounts, no servers — your financial data never leaves your device
