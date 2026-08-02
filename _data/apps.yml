@@ -16,7 +16,7 @@
       desc:
         ko: 사진 속 글자를 인식해 카드를 자동으로 만드세요
         en: Recognize text in photos to create cards automatically
-    - icon: "🃏"
+    - icon: "🗂️"
       title:
         ko: 플래시카드
         en: Flashcards
