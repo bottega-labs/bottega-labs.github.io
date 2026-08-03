@@ -114,8 +114,8 @@
 - id: notch
   name: Notch
   tagline:
-    ko: 연동 없이 쓰는 자산 결산 일기
-    en: A privacy-first net worth journal
+    ko: 순자산의 증감을 한눈에 — 자산 스냅샷 기록
+    en: Snapshot your worth
   accent: "#6EE7A0"
   accent_rgb: "110, 231, 160"
   status: live
@@ -127,8 +127,8 @@
         ko: 자산 스냅샷
         en: Asset Snapshots
       desc:
-        ko: 월말마다 자산과 부채를 스냅샷으로 기록하세요
-        en: Record your assets and liabilities as monthly snapshots
+        ko: 원하는 날짜에 자산과 부채를 스냅샷으로 기록하세요
+        en: Record your assets and liabilities as dated snapshots
     - icon: "📈"
       title:
         ko: 순자산 추이
