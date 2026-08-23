@@ -1,7 +1,8 @@
 # bottega-labs.github.io
 
-GitHub Pages site for Bottega Labs mobile apps. Jekyll-based.
-Deployed at: `https://bottega-labs.github.io`
+Website for Bottega Labs mobile apps. Jekyll-based, hosted on Cloudflare.
+Deployed at: `https://bottega-labs.com`
+Legacy URL (during transition, until store listings are updated): `https://bottega-labs.github.io`
 
 ## Architecture
 
@@ -44,9 +45,9 @@ bottega-labs.github.io/
 ## URLs (register in App Store Connect)
 
 ```
-Marketing URL:      https://bottega-labs.github.io/<app-slug>/
-Support URL:        https://bottega-labs.github.io/<app-slug>/
-Privacy Policy URL: https://bottega-labs.github.io/<app-slug>/privacy.html
+Marketing URL:      https://bottega-labs.com/<app-slug>/
+Support URL:        https://bottega-labs.com/<app-slug>/
+Privacy Policy URL: https://bottega-labs.com/<app-slug>/privacy.html
 ```
 
 ## Common Values
@@ -54,6 +55,7 @@ Privacy Policy URL: https://bottega-labs.github.io/<app-slug>/privacy.html
 | Key | Value |
 |-----|-------|
 | Support / privacy email | `auspicioussource@gmail.com` |
+| Domain email (Cloudflare Email Routing → Gmail) | `support@bottega-labs.com` |
 | AdMob Publisher ID | `pub-8272610349750366` |
 | AdMob app-ads.txt line | `google.com, pub-8272610349750366, DIRECT, f08c47fec0942fa0` |
 
@@ -119,8 +121,8 @@ Use `var(--accent)` in CSS for accent color, `rgba(var(--accent-rgb), 0.2)` for 
 
 ## Deployment
 
-Push to `main` → GitHub Pages builds with Jekyll automatically.
-No custom plugins — only `jekyll-seo-tag` and `jekyll-sitemap` (both GitHub Pages safe).
+Push to `main` → Cloudflare builds (`bundle exec jekyll build`, output `_site`) and deploys automatically.
+No custom plugins — only `jekyll-seo-tag` and `jekyll-sitemap`.
 
 Local dev: `bundle exec jekyll serve`
 
