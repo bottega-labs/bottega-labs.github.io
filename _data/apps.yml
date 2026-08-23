@@ -47,7 +47,7 @@
   accent_rgb: "10, 132, 255"
   status: live
   app_store_id: "6757023908"
-  google_play_id: null
+  google_play_id: io.github.bottega_labs.my_tally
   features:
     - icon: "📝"
       title:
