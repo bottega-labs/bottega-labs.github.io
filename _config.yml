@@ -3,7 +3,7 @@ description: Mobile apps crafted by Bottega Labs
 baseurl: ""
 url: "https://bottega-labs.com"
 
-contact_email: auspicioussource@gmail.com
+contact_email: support@bottega-labs.com
 
 langs:
   - code: ko
@@ -19,5 +19,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - CLAUDE.md
+  - AGENTS.md
   - vendor/
   - "*.sh"
