@@ -77,7 +77,7 @@ layout: default
     <div class="features-grid">
       {% for feature in app.features %}
       <div class="feature-card">
-        <div class="feature-icon">{{ feature.icon }}</div>
+        <div class="feature-icon">{% assign icon_path = "icons/" | append: feature.icon | append: ".svg" %}{% include {{ icon_path }} %}</div>
         <div class="feature-title">
           <span data-lang="ko">{{ feature.title.ko }}</span>
           <span data-lang="en">{{ feature.title.en }}</span>
@@ -102,7 +102,7 @@ layout: default
         <span data-lang="en">{{ en.support_desc }}</span>
       </p>
       <a href="mailto:{{ site.contact_email }}" class="btn-contact">
-        <span>✉️</span>
+        {% include icons/mail.svg %}
         <span data-lang="ko">{{ ko.contact_btn }}</span>
         <span data-lang="en">{{ en.contact_btn }}</span>
       </a>

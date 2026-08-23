@@ -9,28 +9,28 @@
   app_store_id: "6504581198"
   google_play_id: null
   features:
-    - icon: "📷"
+    - icon: camera
       title:
         ko: 카메라로 카드 생성
         en: Create Cards with Camera
       desc:
         ko: 사진 속 글자를 인식해 카드를 자동으로 만드세요
         en: Recognize text in photos to create cards automatically
-    - icon: "🗂️"
+    - icon: layers
       title:
         ko: 플래시카드
         en: Flashcards
       desc:
         ko: 앞뒤 카드로 핵심 내용을 빠르게 암기하세요
         en: Memorize key content quickly with front/back flashcards
-    - icon: "📚"
+    - icon: library
       title:
         ko: 덱 관리
         en: Deck Management
       desc:
         ko: 주제별로 카드 덱을 구성하고 체계적으로 학습하세요
         en: Organize cards into topic-based decks for systematic study
-    - icon: "🎯"
+    - icon: target
       title:
         ko: 집중 학습
         en: Focused Study
@@ -49,28 +49,28 @@
   app_store_id: "6757023908"
   google_play_id: io.github.bottega_labs.my_tally
   features:
-    - icon: "📝"
+    - icon: pencil-line
       title:
         ko: 무엇이든 기록
         en: Log Anything
       desc:
         ko: 시간(분)·체크(횟수)·금액 등 원하는 방식으로 일상을 기록하세요
         en: Record your day as time (minutes), checks (counts), or money
-    - icon: "🎯"
+    - icon: goal
       title:
         ko: 목표 추적
         en: Goal Tracking
       desc:
         ko: 월·분기·맞춤 기간 목표를 세우고 대시보드에서 진행률을 한눈에 확인하세요
         en: Set monthly, quarterly, or custom-period goals and see progress at a glance
-    - icon: "📊"
+    - icon: chart-column
       title:
         ko: 기간별 이력
         en: Period History
       desc:
         ko: 월·분기·맞춤 기간으로 기록을 집계해 추세를 확인하세요
         en: Aggregate records by month, quarter, or custom period to spot trends
-    - icon: "🏷️"
+    - icon: tags
       title:
         ko: 태그 분류
         en: Tag Organization
@@ -89,21 +89,21 @@
   app_store_id: "6766445037"
   google_play_id: null
   features:
-    - icon: "📸"
+    - icon: image
       title:
         ko: 사진 일기
         en: Photo Diary
       desc:
         ko: 음식 사진과 메모를 날짜별로 체계적으로 기록하세요
         en: Record food photos and memos organized by date
-    - icon: "🗺️"
+    - icon: map
       title:
         ko: 지도 시각화
         en: Map View
       desc:
         ko: 어디서 무엇을 먹었는지 지도에서 한눈에 확인하세요
         en: See where and what you ate at a glance on the map
-    - icon: "🔒"
+    - icon: lock
       title:
         ko: 나만의 공간
         en: Private & Secure
@@ -122,28 +122,28 @@
   app_store_id: "6776050278"
   google_play_id: null
   features:
-    - icon: "📸"
+    - icon: camera
       title:
         ko: 자산 스냅샷
         en: Asset Snapshots
       desc:
         ko: 원하는 날짜에 자산과 부채를 스냅샷으로 기록하세요
         en: Record your assets and liabilities as dated snapshots
-    - icon: "📈"
+    - icon: trending-up
       title:
         ko: 순자산 추이
         en: Net Worth Trends
       desc:
         ko: 순자산의 흐름을 차트와 월/분기/연간 결산으로 확인하세요
         en: Track your net worth with charts and monthly, quarterly, yearly reviews
-    - icon: "🎯"
+    - icon: target
       title:
         ko: 목표 예측
         en: Goal Projection
       desc:
         ko: 목표 금액을 정하면 최근 추세로 달성 예상일을 알려드려요
         en: Set a target and see your projected achievement date from recent trends
-    - icon: "🔒"
+    - icon: lock
       title:
         ko: 완전 로컬 저장
         en: Fully On-Device
