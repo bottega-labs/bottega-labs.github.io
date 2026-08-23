@@ -118,6 +118,12 @@ Date format: `YYYY년 MM월 DD일` (KR) / `Month DD, YYYY` (EN)
 Each app sets `--accent` and `--accent-rgb` via inline style in the layout.
 Use `var(--accent)` in CSS for accent color, `rgba(var(--accent-rgb), 0.2)` for shadows.
 
+## Workflow
+
+- **Never verify changes on production.** Check visual/layout changes locally with `bundle exec jekyll serve` (localhost:4000) before committing.
+- Changes needing a real-environment check: push a non-`main` branch — Cloudflare deploys it to a preview URL. Merge to `main` only after verification.
+- Trivial changes (typos, docs) may go direct to `main`.
+
 ## Deployment
 
 Push to `main` → Cloudflare builds (`bundle exec jekyll build`, output `_site`) and deploys automatically.
