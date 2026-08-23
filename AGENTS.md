@@ -54,8 +54,7 @@ Privacy Policy URL: https://bottega-labs.com/<app-slug>/privacy.html
 
 | Key | Value |
 |-----|-------|
-| Support / privacy email | `auspicioussource@gmail.com` |
-| Domain email (Cloudflare Email Routing → Gmail) | `support@bottega-labs.com` |
+| Support / privacy email | `support@bottega-labs.com` (Cloudflare Email Routing → `auspicioussource@gmail.com`) |
 | AdMob Publisher ID | `pub-8272610349750366` |
 | AdMob app-ads.txt line | `google.com, pub-8272610349750366, DIRECT, f08c47fec0942fa0` |
 
