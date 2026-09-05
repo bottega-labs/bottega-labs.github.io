@@ -260,12 +260,6 @@ button { cursor: pointer; font-family: var(--font); }
   color: var(--text-secondary);
 }
 .app-footer a:hover { color: var(--accent); text-decoration: none; }
-.store-legal {
-  margin-top: 12px;
-  font-size: 11px;
-  line-height: 1.5;
-  color: var(--text-tertiary);
-}
 .footer-copy {
   margin-top: 10px;
   font-size: 12px;
