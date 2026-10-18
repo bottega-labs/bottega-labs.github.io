@@ -48,7 +48,7 @@ bottega-labs.github.io/
 ```
 Marketing URL:      https://bottega-labs.com/<app-slug>/
 Support URL:        https://bottega-labs.com/<app-slug>/
-Privacy Policy URL: https://bottega-labs.com/<app-slug>/privacy.html
+Privacy Policy URL: https://bottega-labs.com/<app-slug>/privacy   (Cloudflare serves the extensionless path; `.html` 308-redirects to it)
 ```
 
 ## Common Values
