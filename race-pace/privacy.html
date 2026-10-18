@@ -36,7 +36,7 @@ title: "개인정보처리방침 - 레이스페이스"
   </ul>
   <p>이벤트에는 건강 정보, 심박·페이스 목표 값, 운동 기록, 위치, 이름이나 연락처가 포함되지 않습니다. 본 앱은 광고 식별자(IDFA)를 수집하지 않는 Firebase 구성(FirebaseAnalyticsCore)을 사용하며, 사용자를 추적하지 않습니다.</p>
   <p><strong>대회 목록·코스 파일 내려받기</strong></p>
-  <p>앱은 대회 목록과 코스 파일을 bottega-labs.com에서 내려받습니다. 이 요청에는 개인정보가 담기지 않지만, 인터넷 통신의 특성상 웹사이트 호스팅 서비스(Cloudflare)가 IP 주소와 요청 시각을 접속 기록으로 남길 수 있습니다.</p>
+  <p>앱은 대회 목록과 코스 파일을 content.bottega-labs.com(Cloudflare R2 저장소)에서 내려받습니다. 이 요청에는 개인정보가 담기지 않지만, 인터넷 통신의 특성상 저장소 운영 서비스(Cloudflare)가 IP 주소와 요청 시각을 접속 기록으로 남길 수 있습니다.</p>
 
   <h3>2. 개인정보의 수집 및 이용 목적</h3>
   <ol>
@@ -50,7 +50,7 @@ title: "개인정보처리방침 - 레이스페이스"
   <ul>
     <li><strong>Google LLC (Firebase Analytics, Crashlytics):</strong> 1항의 앱 사용 이벤트와 오류 진단 정보 처리. 정보는 암호화된 통신(HTTPS)으로 Google의 국외(미국 등) 서버에 전송될 수 있습니다. <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">https://firebase.google.com/support/privacy</a></li>
     <li><strong>Apple Inc. (App Store 결제, WorkoutKit):</strong> 앱 내 구매 결제 처리, Apple 운동 앱에 운동 등록. <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">https://www.apple.com/legal/privacy/</a></li>
-    <li><strong>Cloudflare, Inc. (웹사이트 호스팅):</strong> 대회 목록·코스 파일 제공 과정의 접속 기록. <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">https://www.cloudflare.com/privacypolicy/</a></li>
+    <li><strong>Cloudflare, Inc. (웹사이트·파일 저장소 호스팅):</strong> 대회 목록·코스 파일 제공 과정의 접속 기록. <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">https://www.cloudflare.com/privacypolicy/</a></li>
   </ul>
 
   <h3>4. 개인정보의 보유 및 파기</h3>
@@ -78,7 +78,7 @@ title: "개인정보처리방침 - 레이스페이스"
   <p>본 앱은 만 14세 미만 아동을 대상으로 하지 않으며, 아동의 개인정보를 고의로 수집하지 않습니다. 만약 아동의 개인정보가 수집된 사실을 인지하게 될 경우, 즉시 해당 정보를 파기합니다.</p>
 
   <h3>9. 데이터 보안</h3>
-  <p>앱과 Google Firebase, bottega-labs.com 사이의 통신은 HTTPS로 암호화됩니다. 개발자의 서버에 사용자 정보를 저장하지 않습니다.</p>
+  <p>앱과 Google Firebase, content.bottega-labs.com 사이의 통신은 HTTPS로 암호화됩니다. 개발자의 서버에 사용자 정보를 저장하지 않습니다.</p>
 
   <h3>10. 개인정보 처리방침의 변경</h3>
   <p>본 방침은 법령 또는 서비스의 변경에 따라 개정될 수 있으며, 변경 시 본 페이지에 시행일과 함께 공지합니다.</p>
@@ -125,7 +125,7 @@ title: "개인정보처리방침 - 레이스페이스"
   </ul>
   <p>Events never include health data, heart-rate or pace target values, workout records, location, or your name or contact details. The App uses a Firebase configuration that does not collect the advertising identifier (IDFA) (FirebaseAnalyticsCore) and does not track you.</p>
   <p><strong>Downloading the race list and course files</strong></p>
-  <p>The App downloads the race list and course files from bottega-labs.com. These requests contain no personal information, but as with any internet request, the website host (Cloudflare) may log your IP address and the time of the request.</p>
+  <p>The App downloads the race list and course files from content.bottega-labs.com (Cloudflare R2 storage). These requests contain no personal information, but as with any internet request, the storage host (Cloudflare) may log your IP address and the time of the request.</p>
 
   <h3>2. Purpose of Collection and Use</h3>
   <ol>
@@ -139,7 +139,7 @@ title: "개인정보처리방침 - 레이스페이스"
   <ul>
     <li><strong>Google LLC (Firebase Analytics, Crashlytics):</strong> processes the usage events and crash diagnostics described in Section 1. Data is sent over encrypted connections (HTTPS) and may be transferred to Google servers outside your country (such as the United States). <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">https://firebase.google.com/support/privacy</a></li>
     <li><strong>Apple Inc. (App Store payments, WorkoutKit):</strong> processes in-app purchases and registers workouts in the Workout app. <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">https://www.apple.com/legal/privacy/</a></li>
-    <li><strong>Cloudflare, Inc. (website hosting):</strong> access logs when serving the race list and course files. <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">https://www.cloudflare.com/privacypolicy/</a></li>
+    <li><strong>Cloudflare, Inc. (website and file storage hosting):</strong> access logs when serving the race list and course files. <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">https://www.cloudflare.com/privacypolicy/</a></li>
   </ul>
 
   <h3>4. Data Retention and Deletion</h3>
@@ -167,7 +167,7 @@ title: "개인정보처리방침 - 레이스페이스"
   <p>The App is not directed at children under the age of 13 and does not knowingly collect personal information from them. If we become aware that we have collected personal information from a child, we will take steps to delete such information immediately.</p>
 
   <h3>9. Data Security</h3>
-  <p>Communication between the App and Google Firebase and bottega-labs.com is encrypted with HTTPS. The Developer does not store user information on its own servers.</p>
+  <p>Communication between the App and Google Firebase and content.bottega-labs.com is encrypted with HTTPS. The Developer does not store user information on its own servers.</p>
 
   <h3>10. Changes to This Policy</h3>
   <p>This Privacy Policy may be updated to reflect changes in applicable law or the service. Any changes will be announced on this page with the new effective date.</p>
