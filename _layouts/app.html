@@ -22,7 +22,14 @@ layout: default
          width="112" height="112"
          class="app-icon"
          onerror="this.src='{{ '/assets/images/default-icon.png' | relative_url }}'">
+    {% if app.name_en %}
+    <h1 class="app-name">
+      <span data-lang="ko">{{ app.name }}</span>
+      <span data-lang="en">{{ app.name_en }}</span>
+    </h1>
+    {% else %}
     <h1 class="app-name">{{ app.name }}</h1>
+    {% endif %}
     <p class="app-tagline">
       <span data-lang="ko">{{ app.tagline.ko }}</span>
       <span data-lang="en">{{ app.tagline.en }}</span>
@@ -32,6 +39,7 @@ layout: default
       <span data-lang="ko">{{ ko.status_live }}</span>
       <span data-lang="en">{{ en.status_live }}</span>
     </span>
+    {% elsif app.status == "coming-soon" %}
     {% else %}
     <span class="status-badge review">
       <span data-lang="ko">{{ ko.status_review }}</span>

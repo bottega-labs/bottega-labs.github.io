@@ -150,3 +150,45 @@
       desc:
         ko: 계정도 서버도 없이 모든 자산 데이터는 기기 안에만 저장됩니다
         en: No accounts, no servers — your financial data never leaves your device
+
+- id: race-pace
+  name: 레이스페이스
+  name_en: RacePace
+  tagline:
+    ko: 대회 코스별 구간 목표를 애플워치로
+    en: Race-course pacing plans for your Apple Watch
+  accent: "#FF6B4A"
+  accent_rgb: "255, 107, 74"
+  status: coming-soon
+  # App Store ID 6820819564 — set app_store_id (and status: live) once the app is live; until then the badge link would 404
+  app_store_id: null
+  google_play_id: null
+  features:
+    - icon: map
+      title:
+        ko: 코스 지도와 고도
+        en: Course Map & Elevation
+      desc:
+        ko: 대회 코스를 지도와 km 단위 고도 그래프로 한 화면에서 확인하세요
+        en: See the race course on a map with a per-km elevation profile
+    - icon: target
+      title:
+        ko: 구간별 목표
+        en: Targets per Segment
+      desc:
+        ko: 코스를 1~5개 단계로 나누고 단계마다 심박 존이나 페이스 목표를 정하세요
+        en: Split the course into 1–5 segments and set a heart-rate zone or pace for each
+    - icon: chart-column
+      title:
+        ko: 전략 템플릿
+        en: Strategy Templates
+      desc:
+        ko: 균등·초반 보수적·네거티브 템플릿으로 모든 단계의 목표를 한 번에 채우세요
+        en: Fill every segment at once with Even, Conservative Start, or Negative Split templates
+    - icon: goal
+      title:
+        ko: Apple Watch로 보내기
+        en: Send to Apple Watch
+      desc:
+        ko: 만든 플랜을 Apple 운동 앱으로 보내 달리는 동안 손목에서 구간과 목표 알림을 받으세요
+        en: Send your plan to the Apple Workout app and get segment and target alerts on your wrist

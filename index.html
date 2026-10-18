@@ -25,11 +25,23 @@ description: "Mobile apps crafted by Bottega Labs"
              alt="{{ app.name }}"
              class="app-card-icon">
         <div>
+          {% if app.name_en %}
+          <div class="app-card-name">
+            <span data-lang="ko">{{ app.name }}</span>
+            <span data-lang="en">{{ app.name_en }}</span>
+          </div>
+          {% else %}
           <div class="app-card-name">{{ app.name }}</div>
+          {% endif %}
           {% if app.status == "live" %}
           <span class="status-badge live" style="margin-top:4px; font-size:11px;">
             <span data-lang="ko">{{ ko.status_live }}</span>
             <span data-lang="en">{{ en.status_live }}</span>
+          </span>
+          {% elsif app.status == "coming-soon" %}
+          <span class="status-badge review" style="margin-top:4px; font-size:11px;">
+            <span data-lang="ko">{{ ko.coming_soon }}</span>
+            <span data-lang="en">{{ en.coming_soon }}</span>
           </span>
           {% else %}
           <span class="status-badge review" style="margin-top:4px; font-size:11px;">

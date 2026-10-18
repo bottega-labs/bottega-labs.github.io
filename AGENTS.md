@@ -41,13 +41,14 @@ bottega-labs.github.io/
 | `my-tally` | My Tally | `6757023908` | `io.github.bottega_labs.my_tally` | `#0A84FF` | Live |
 | `tia` | TIA (Today I Ate) | `6766445037` | — | `#FF6B6B` | Live |
 | `notch` | Notch | `6776050278` | — | `#6EE7A0` | Live |
+| `race-pace` | 레이스페이스 (RacePace) | `6820819564` (not set in apps.yml until live) | — | `#FF6B4A` | Coming soon |
 
 ## URLs (register in App Store Connect)
 
 ```
 Marketing URL:      https://bottega-labs.com/<app-slug>/
 Support URL:        https://bottega-labs.com/<app-slug>/
-Privacy Policy URL: https://bottega-labs.com/<app-slug>/privacy.html
+Privacy Policy URL: https://bottega-labs.com/<app-slug>/privacy   (Cloudflare serves the extensionless path; `.html` 308-redirects to it)
 ```
 
 ## Common Values
@@ -61,6 +62,8 @@ Privacy Policy URL: https://bottega-labs.com/<app-slug>/privacy.html
 ## Adding a New App
 
 1. **Add entry to `_data/apps.yml`** — id, name, tagline (ko/en), accent, accent_rgb, status, app_store_id, features
+   - Optional `name_en` when the English name differs (shown per language).
+   - Before release: `status: coming-soon` and `app_store_id: null` (shows "출시 예정" instead of a store badge that would 404).
 2. **Add icon** → `assets/images/<app-id>/icon.png` (square, 120×120+)
 3. **Create `<app-slug>/index.html`** — frontmatter only:
    ```yaml
