@@ -6,94 +6,141 @@ title: "개인정보처리방침 - My Tally"
 
 <div data-lang="ko">
   <h1>개인정보 처리방침</h1>
-  <p class="effective-date">시행일: 2026년 8월 23일</p>
+  <p class="effective-date">시행일: 2026년 11월 6일</p>
 
-  <p>My Tally 개발자(이하 "개발자")는 사용자의 개인정보를 소중히 여기며, '개인정보 보호법' 등 관련 법령을 준수합니다. 본 개인정보 처리방침은 'My Tally'(이하 "앱")를 이용하는 사용자의 개인정보가 어떻게 수집, 이용, 보호되는지 설명합니다.</p>
-
-  <h3>1. 수집하는 개인정보 항목 및 방법</h3>
-  <p>본 앱은 별도의 회원가입 절차 없이 이용 가능하며, 개발자는 사용자의 이름, 전화번호, 주소 등의 개인 식별 정보를 서버에 직접 저장하지 않습니다.</p>
-  <p>앱 내 광고 서비스 제공 및 앱 개선을 위해 제3자(Third Party) 서비스 제공자에 의해 다음과 같은 정보가 자동으로 수집될 수 있습니다.</p>
+  <h3>요약</h3>
   <ul>
-    <li><strong>광고 식별자(Advertising ID):</strong> Android ADID, iOS IDFA</li>
-    <li><strong>기기 정보:</strong> 기기 모델명, OS 버전, 언어 설정, IP 주소, 네트워크 상태</li>
-    <li><strong>앱 이용 기록:</strong> 쿠키(Cookie), 방문 기록, 접속 로그, 서비스 이용 시간</li>
+    <li>기록·목표·설정은 기기에 저장돼요. 계정이 없고, 개발자가 운영하는 앱 데이터 서버도 없어요.</li>
+    <li>iCloud 백업을 켜면 내 iCloud Drive에 파일이 저장돼요.</li>
+    <li>지역을 KR로 설정하면 공휴일 파일을 인터넷에서 내려받아요.</li>
+    <li>사용 분석(Google Firebase Analytics)과 광고(Google AdMob)를 사용하며, 이 과정에서 Google이 일부 정보를 수집해요. 동의가 필요한 지역에서는 동의한 뒤에만 분석이 켜져요.</li>
+    <li>결제는 Apple이 처리해요.</li>
   </ul>
-
-  <h3>2. 개인정보의 수집 및 이용 목적</h3>
-  <p>수집된 정보는 다음의 목적으로만 이용됩니다.</p>
-  <ol>
-    <li><strong>맞춤형 광고 제공:</strong> Google AdMob을 통해 사용자의 관심사에 맞는 광고를 노출하기 위함</li>
-    <li><strong>서비스 개선:</strong> Google Firebase Analytics를 통해 앱 이용 행태(기능 사용·화면 조회 등)와 오류를 분석하여 서비스를 개선하기 위함</li>
-  </ol>
-
-  <h3>3. 개인정보의 제3자 제공</h3>
-  <p>본 앱은 서비스 제공을 위해 다음과 같은 외부 전문 업체에 제한된 범위 내에서 정보를 제공(위탁)하고 있습니다.</p>
+  <h3>1. 기기에 저장되는 정보</h3>
+  <p>기록(시간·체크·금액), 태그, 목표, 설정은 기기에 저장돼요. 홈 화면 위젯, 잠금 화면 실시간 현황(Live Activity), 단축어(Shortcuts)는 App Group으로 같은 기기 안에서 데이터를 공유하며, 앱이 이 데이터를 서버로 보내지 않아요.</p>
+  <h3>2. iCloud 백업</h3>
+  <p>설정에서 iCloud 백업을 켜거나 "지금 백업"을 누르면, 기록·목표·설정이 담긴 파일(<code>my-tally-backup.json</code>)이 내 iCloud 컨테이너의 <code>Documents/</code> 폴더에 앱이 따로 암호화하지 않은 일반 JSON으로 저장돼요. 파일 앱에서 볼 수 있어요. 이 파일은 내 Apple ID의 iCloud에 있으며 개발자는 접근할 수 없어요. 최신 백업 1개만 보관돼요. 백업을 끄면 이미 저장된 파일은 그대로 남으므로, 필요하면 파일 앱(iCloud Drive &gt; My Tally)에서 직접 지워 주세요. iCloud 저장·동기화는 Apple의 약관과 개인정보 정책을 따라요.</p>
+  <h3>3. 공휴일 파일 받기</h3>
+  <p>지역을 KR로 설정한 경우에만 앱이 공개 공휴일 JSON 파일(<code><a href="https://bottega-labs.com/my-tally/holidays-kr.json">https://bottega-labs.com/my-tally/holidays-kr.json</a></code>)을 https로 내려받아요. 내 기록이나 식별 정보는 보내지 않아요. 파일을 제공하는 서버와 이를 호스팅하는 사이트(CDN 포함)는 일반적인 요청 정보(IP 주소, 사용자 에이전트)를 받을 수 있어요. 다른 지역에서는 내려받지 않아요.</p>
+  <h3>4. 사용 분석 (Google Firebase Analytics)</h3>
+  <p>앱 사용 현황을 파악하기 위해 Firebase Analytics를 사용해요. 앱은 시작할 때 분석 수집을 꺼 두고, 동의 확인이 끝난 뒤에만 켜요. 영국·EEA처럼 동의가 필요한 지역에서는 Google 동의 창(UMP)에서 필요한 목적에 동의한 경우에만 켜지고, 동의가 필요 없는 지역에서는 동의 확인이 끝나면 켜져요. 동의를 확인하지 못하면 켜지 않아요.</p>
+  <p>앱이 직접 보내는 이벤트는 다음뿐이에요.</p>
   <ul>
-    <li><strong>Google AdMob (광고):</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a></li>
-    <li><strong>Google Firebase (분석):</strong> <a href="https://firebase.google.com/policies/analytics" target="_blank" rel="noopener">https://firebase.google.com/policies/analytics</a></li>
+    <li><code>tab_viewed</code>: 화면 이름(history 또는 dashboard)</li>
+    <li><code>log_added</code>: 기록 종류(time, check, money)</li>
+    <li><code>goal_created</code>: 목표 기간 유형, 반복 여부</li>
   </ul>
-
-  <h3>4. 사용자 및 법정대리인의 권리</h3>
-  <p>사용자는 언제든지 기기 설정을 통해 맞춤형 광고 식별자 수집을 거부할 수 있습니다.</p>
+  <p>기록 내용, 금액, 태그 이름, 메모는 보내지 않아요. 이 외에 Firebase가 자동으로 수집하는 정보(앱 인스턴스 ID, 기기 모델, OS 버전, 앱 버전, 언어, 대략적인 지역, 앱 실행·세션 정보, 인앱 구매 이벤트가 포함될 수 있음)가 Google로 전송돼요. 이름·연락처는 포함되지 않아요. Firebase 분석 데이터 보관 기간: 2개월. Google의 처리는 Google 개인정보처리방침을 따라요.</p>
+  <h3>5. 광고 (Google AdMob)</h3>
+  <p>무료 이용 시 광고가 표시돼요(Pro 구매 시 제거). 광고를 요청할 때 Google에 IP 주소, 기기 정보, 광고 식별자 관련 정보가 전달될 수 있어요.</p>
   <ul>
-    <li><strong>iOS:</strong> 설정 &gt; 개인정보 보호 및 보안 &gt; 추적 &gt; My Tally 비활성화</li>
-    <li><strong>Android:</strong> 설정 &gt; Google &gt; 광고 &gt; 광고 ID 삭제 또는 재설정</li>
+    <li>동의 확인: 필요한 지역(영국·EEA 등)에서는 Google UMP 동의 창으로 동의를 받아요. 설정의 "광고 개인정보 설정"에서 언제든 바꿀 수 있어요.</li>
+    <li>iOS 추적 허용(ATT): 광고 동의 후 한 번 물어봐요. 허용하면 광고 식별자(IDFA)를 맞춤 광고에 쓸 수 있어요. 나중에 설정 &gt; 개인정보 보호 및 보안 &gt; 추적에서 바꿀 수 있어요.</li>
+    <li>동의하지 않았거나 추적을 허용하지 않았다면 맞춤이 아닌 광고만 표시돼요. 이 경우에도 광고 노출 횟수 제한과 부정 이용 방지를 위해 일부 정보가 쓰일 수 있어요.</li>
+    <li>동의 여부를 확인하지 못하면 광고를 요청하지 않아요.</li>
+    <li>이 앱은 아동 대상 서비스가 아니며, 광고 요청에 아동 대상 처리와 미성년 동의 태그를 모두 "아니오"로 명시해요.</li>
   </ul>
-
-  <h3>5. 아동의 개인정보 보호</h3>
-  <p>본 앱은 만 14세 미만 아동의 개인정보를 고의로 수집하지 않습니다. 만약 아동의 개인정보가 수집된 사실을 인지하게 될 경우, 즉시 해당 정보를 파기할 것입니다.</p>
-
-  <h3>6. 문의처</h3>
+  <h3>6. 결제</h3>
+  <p>Pro는 Apple 인앱 결제(StoreKit)로 처리돼요. 카드 등 결제 정보는 Apple이 처리하며 개발자는 받지 않아요.</p>
+  <h3>7. 내보내기와 공유</h3>
   <ul>
-    <li><strong>담당:</strong> My Tally 개발자</li>
-    <li><strong>이메일:</strong> <a href="mailto:support@bottega-labs.com">support@bottega-labs.com</a></li>
+    <li>CSV 내보내기(Pro): 공유 시트에서 내가 고른 앱으로 파일이 전달돼요.</li>
+    <li>공유 카드: 목표 요약 카드 이미지는 기기에서 만들어지고, 보낼 앱은 내가 골라요. 카드에는 태그나 금액이 보일 수 있어요.</li>
   </ul>
+  <p>두 경우 모두 이후의 처리는 선택한 앱을 따라요.</p>
+  <h3>8. 보관과 삭제</h3>
+  <p>기기 안의 데이터는 앱을 삭제하면 지워져요. iCloud 백업 파일은 파일 앱에서 직접 삭제할 수 있어요. Google이 수집한 분석·광고 정보는 Google 정책에 따라 보관돼요.</p>
+  <h3>9. 이용자의 권리</h3>
+  <p>계정이 없어 이름이나 연락처로 이용자를 찾을 수 없어요. 그래서 열람·삭제·처리 정지(반대)는 다음 방법으로 해요.</p>
+  <ul>
+    <li>기기 안 데이터: 앱에서 직접 보고 지울 수 있고, 앱을 삭제하면 모두 지워져요.</li>
+    <li>iCloud 백업: 파일 앱에서 직접 열람·삭제해요.</li>
+    <li>분석·광고 식별자: 설정 &gt; 개인정보 보호 및 보안 &gt; 추적에서 추적을 끄거나, 광고 식별자를 재설정하거나, 앱을 다시 설치하면 새 식별자가 만들어지고 이전 식별자와 연결되지 않아요. 동의가 필요한 지역에서는 앱 설정의 "광고 개인정보 설정"에서 동의를 철회할 수 있어요.</li>
+    <li>그 밖의 요청: <a href="mailto:support@bottega-labs.com">support@bottega-labs.com</a></li>
+  </ul>
+  <h3>10. 만 14세 미만 아동</h3>
+  <p>이 앱은 만 14세 미만 아동을 대상으로 하지 않아요. 앱은 이용자의 나이를 알 수 없고, 만 14세 미만 아동의 정보를 알고도 수집하는 일은 없어요.</p>
+  <h3>11. 개인정보 보호책임자</h3>
+  <ul>
+    <li>성명/직책: 홍상원 / 대표</li>
+    <li>이메일: <a href="mailto:support@bottega-labs.com">support@bottega-labs.com</a></li>
+  </ul>
+  <h3>12. 개인정보의 국외 이전</h3>
+  <ul>
+    <li>이전받는 자: Google LLC (미국)</li>
+    <li>이전 항목: 앱 인스턴스 ID, 기기 정보, 앱 사용 이벤트, IP 주소(대략적 위치 추정), 광고 식별자(허용한 경우)</li>
+    <li>이전 목적: 사용 분석, 광고 제공과 광고 성과 측정, 부정 이용 방지</li>
+    <li>이전 방법: 앱 실행 중 네트워크를 통한 전송</li>
+    <li>보관 기간: 분석 데이터는 2개월, 광고 관련 정보는 Google 정책에 따름</li>
+    <li>거부 방법: 위 9항의 방법으로 추적을 끄거나 동의를 철회할 수 있어요. 광고를 완전히 없애려면 Pro를 구매하세요.</li>
+  </ul>
+  <h3>13. 변경과 문의</h3>
+  <p>내용이 바뀌면 이 페이지와 시행일을 갱신해요. 문의: <a href="mailto:support@bottega-labs.com">support@bottega-labs.com</a></p>
 </div>
 
 <hr class="privacy-divider">
 
 <div data-lang="en">
   <h1>Privacy Policy</h1>
-  <p class="effective-date">Last Updated: August 23, 2026</p>
+  <p class="effective-date">Last Updated: November 6, 2026</p>
 
-  <p>The My Tally developer (hereinafter "the Developer") values your privacy and complies with applicable laws and regulations. This Privacy Policy explains how the "My Tally" app collects, uses, and protects user information.</p>
-
-  <h3>1. Information Collection</h3>
-  <p>The App does not require user registration, and the Developer does not directly collect or store personal identification information such as names, phone numbers, or addresses on our servers.</p>
-  <p>For the purpose of providing in-app advertising and improving services, the following information may be automatically collected by third-party service providers:</p>
+  <h3>Summary</h3>
   <ul>
-    <li><strong>Advertising ID:</strong> Android ADID, iOS IDFA</li>
-    <li><strong>Device Information:</strong> Device model, OS version, language settings, IP address, network status</li>
-    <li><strong>Usage Data:</strong> Cookies, visit history, access logs, service usage time</li>
+    <li>Your logs, goals and settings are stored on your device. There is no account and no app-data server run by the developer.</li>
+    <li>If you turn on iCloud backup, a file is saved to your own iCloud Drive.</li>
+    <li>When your region is set to KR, the app downloads a public holiday file from the internet.</li>
+    <li>The app uses usage analytics (Google Firebase Analytics) and ads (Google AdMob); Google collects some information through them. In regions that require consent, analytics are turned on only after you consent.</li>
+    <li>Apple handles payments.</li>
   </ul>
-
-  <h3>2. Purpose of Collection and Use</h3>
-  <p>The collected information is used solely for the following purposes:</p>
-  <ol>
-    <li><strong>Targeted Advertising:</strong> To display ads relevant to user interests via Google AdMob.</li>
-    <li><strong>Service Improvement:</strong> To analyze app usage behavior (feature usage, screen views) and errors to improve the service via Google Firebase Analytics.</li>
-  </ol>
-
-  <h3>3. Third-Party Disclosure</h3>
-  <p>The App provides information to the following external professional companies within a limited scope to provide services.</p>
+  <h3>1. Data stored on your device</h3>
+  <p>Logs (time, check, money), tags, goals and settings are stored on the device. The home screen widget, the lock screen Live Activity and Shortcuts share data with the app through an App Group on the same device; the app does not send this data to a server.</p>
+  <h3>2. iCloud backup</h3>
+  <p>When you turn on iCloud backup or tap "Back up now", a file (<code>my-tally-backup.json</code>) containing your logs, goals and settings is saved to the <code>Documents/</code> folder of the app's iCloud container as plain JSON that the app does not additionally encrypt. You can see it in the Files app. It lives in the iCloud of your own Apple ID, and the developer cannot access it. Only the latest backup is kept. If you turn backup off, the file that was already saved stays there; delete it in the Files app (iCloud Drive &gt; My Tally) if you want it gone. iCloud storage and sync follow Apple's terms and privacy policy.</p>
+  <h3>3. Downloading the holiday file</h3>
+  <p>Only when your region is set to KR, the app downloads a public holiday JSON file (<code><a href="https://bottega-labs.com/my-tally/holidays-kr.json">https://bottega-labs.com/my-tally/holidays-kr.json</a></code>) over https. None of your logs or identifiers are sent. The server that hosts the file, and the hosting site (including any CDN), may receive ordinary request information (IP address and user agent). Other regions do not download it.</p>
+  <h3>4. Usage analytics (Google Firebase Analytics)</h3>
+  <p>The app uses Firebase Analytics to understand how it is used. The app starts with analytics collection switched off and switches it on only after consent has been checked. In regions that require consent (the UK, EEA and others) it is switched on only if you agree to the required purposes in Google's consent form (UMP); elsewhere it is switched on once the check finishes. If consent cannot be checked, it stays off.</p>
+  <p>The only events the app sends itself are:</p>
   <ul>
-    <li><strong>Google AdMob (Ads):</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a></li>
-    <li><strong>Google Firebase (Analytics):</strong> <a href="https://firebase.google.com/policies/analytics" target="_blank" rel="noopener">https://firebase.google.com/policies/analytics</a></li>
+    <li><code>tab_viewed</code>: screen name (history or dashboard)</li>
+    <li><code>log_added</code>: entry type (time, check, money)</li>
+    <li><code>goal_created</code>: goal period type and whether it repeats</li>
   </ul>
-
-  <h3>4. User Rights</h3>
-  <p>Users can opt-out of the collection of personalized advertising identifiers at any time via device settings.</p>
+  <p>Entry contents, amounts, tag names and notes are not sent. Firebase also collects some information automatically (app instance ID, device model, OS version, app version, language, approximate region, app launch and session information, and possibly in-app purchase events) and sends it to Google. It does not include your name or contact details. Firebase analytics data retention: 2 months. Google's handling is governed by Google's privacy policy.</p>
+  <h3>5. Ads (Google AdMob)</h3>
+  <p>Ads are shown in the free version (removed with Pro). When an ad is requested, Google may receive your IP address, device information and advertising-identifier-related information.</p>
   <ul>
-    <li><strong>iOS:</strong> Settings &gt; Privacy &amp; Security &gt; Tracking &gt; Toggle off for My Tally</li>
-    <li><strong>Android:</strong> Settings &gt; Google &gt; Ads &gt; Delete advertising ID or Reset advertising ID</li>
+    <li>Consent: in regions that require it (the UK, EEA and others), consent is collected with Google's UMP form. You can change it any time under "Ad privacy settings" in Settings.</li>
+    <li>iOS tracking permission (ATT): asked once after ad consent. If you allow it, the advertising identifier (IDFA) can be used for personalized ads. You can change it later in Settings &gt; Privacy &amp; Security &gt; Tracking.</li>
+    <li>If you did not consent or did not allow tracking, only non-personalized ads are shown. Some information may still be used for frequency capping and fraud prevention.</li>
+    <li>If consent status cannot be determined, no ads are requested.</li>
+    <li>The app is not directed to children, and ad requests explicitly set both the child-directed and under-age-of-consent tags to false.</li>
   </ul>
-
-  <h3>5. Children's Privacy</h3>
-  <p>The App does not knowingly collect personal information from children under the age of 13. If we become aware that we have collected personal information from a child, we will take steps to delete such information immediately.</p>
-
-  <h3>6. Contact Us</h3>
+  <h3>6. Payments</h3>
+  <p>Pro is purchased with Apple in-app purchase (StoreKit). Apple handles your payment information; the developer does not receive it.</p>
+  <h3>7. Export and sharing</h3>
   <ul>
-    <li><strong>Contact:</strong> My Tally Developer</li>
-    <li><strong>Email:</strong> <a href="mailto:support@bottega-labs.com">support@bottega-labs.com</a></li>
+    <li>CSV export (Pro): the file is handed to the app you choose in the share sheet.</li>
+    <li>Share card: the goal summary card image is generated on your device and you choose the app to send it to. The card may show tags or amounts.</li>
   </ul>
+  <p>In both cases, what happens next is governed by the app you choose.</p>
+  <h3>8. Retention and deletion</h3>
+  <p>Data on your device is removed when you delete the app. You can delete the iCloud backup file yourself in the Files app. Analytics and ad information collected by Google is retained under Google's policies.</p>
+  <h3>9. Your rights</h3>
+  <p>There is no account, so you cannot be looked up by name or contact details. You can exercise access, deletion and objection as follows.</p>
+  <ul>
+    <li>Data on your device: view and delete it in the app; deleting the app removes it all.</li>
+    <li>iCloud backup: view and delete the file in the Files app.</li>
+    <li>Analytics and advertising identifiers: turn off tracking in Settings &gt; Privacy &amp; Security &gt; Tracking, reset your advertising identifier, or reinstall the app; a new identifier is created and is not linked to the old one. In regions that require consent, withdraw consent under "Ad privacy settings" in the app.</li>
+    <li>Other requests: <a href="mailto:support@bottega-labs.com">support@bottega-labs.com</a></li>
+  </ul>
+  <h3>10. Children</h3>
+  <p>This app is not directed to children under 13. We cannot know your age, and we do not knowingly collect information from children under 13.</p>
+  <h3>11. Contact and international transfer</h3>
+  <ul>
+    <li>Contact: <a href="mailto:support@bottega-labs.com">support@bottega-labs.com</a></li>
+    <li>Information collected through Firebase and AdMob is sent to Google LLC in the United States for analytics, ad delivery and measurement, and fraud prevention.</li>
+  </ul>
+  <h3>12. Changes</h3>
+  <p>When this policy changes, this page and the effective date are updated.</p>
 </div>
