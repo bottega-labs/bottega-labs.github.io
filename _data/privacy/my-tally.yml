@@ -1,0 +1,188 @@
+# My Tally 개인정보처리방침. 조항 순서가 곧 번호(unnumbered 제외).
+# 조항마다 langs의 모든 언어를 채운다 — scripts/check-privacy.rb가 검사한다.
+effective: 2026-11-06
+langs: [ko, en]
+sections:
+  - id: summary
+    unnumbered: true
+    title:
+      ko: "요약"
+      en: "Summary"
+    body:
+      ko: |
+        - 기록·목표·설정은 사용자의 기기에 저장됩니다. 회원 계정이 없으며, 개발자가 운영하는 앱 데이터 서버도 없습니다.
+        - iCloud 백업을 사용하면 사용자 본인의 iCloud Drive에 백업 파일이 저장됩니다.
+        - 지역을 KR로 설정한 경우 공휴일 파일을 인터넷에서 내려받습니다.
+        - 사용 분석(Google Firebase Analytics)과 광고(Google AdMob)를 이용하며, 이 과정에서 Google이 일부 정보를 수집합니다. 동의가 필요한 지역에서는 사용자가 동의한 경우에만 분석 기능이 활성화됩니다.
+        - 결제는 Apple이 처리합니다.
+      en: |
+        - Your logs, goals and settings are stored on your device. There is no account and no app-data server run by the developer.
+        - If you turn on iCloud backup, a file is saved to your own iCloud Drive.
+        - When your region is set to KR, the app downloads a public holiday file from the internet.
+        - The app uses usage analytics (Google Firebase Analytics) and ads (Google AdMob); Google collects some information through them. In regions that require consent, analytics are turned on only after you consent.
+        - Apple handles payments.
+  - id: on_device
+    title:
+      ko: "기기에 저장되는 정보"
+      en: "Data stored on your device"
+    body:
+      ko: |
+        기록(시간·체크·금액), 태그, 목표, 설정은 사용자의 기기에 저장됩니다. 홈 화면 위젯, 잠금 화면 실시간 현황(Live Activity), 단축어(Shortcuts)는 App Group을 통해 같은 기기 안에서 데이터를 공유하며, 앱은 이 데이터를 서버로 보내지 않습니다.
+      en: |
+        Logs (time, check, money), tags, goals and settings are stored on the device. The home screen widget, the lock screen Live Activity and Shortcuts share data with the app through an App Group on the same device; the app does not send this data to a server.
+  - id: icloud
+    title:
+      ko: "iCloud 백업"
+      en: "iCloud backup"
+    body:
+      ko: |
+        설정에서 iCloud 백업을 켜거나 "지금 백업"을 누르면 기록·목표·설정이 담긴 파일(`my-tally-backup.json`)이 사용자의 iCloud 컨테이너 내 `Documents/` 폴더에 저장됩니다. 이 파일은 앱이 별도로 암호화하지 않은 일반 JSON 형식이며, 파일 앱에서 확인할 수 있습니다. 백업 파일은 사용자 Apple ID의 iCloud에 보관되며 개발자는 이에 접근할 수 없습니다. 최신 백업 1개만 보관됩니다. 백업을 꺼도 이미 저장된 파일은 삭제되지 않으므로, 필요한 경우 파일 앱(iCloud Drive > My Tally)에서 직접 삭제하시기 바랍니다. iCloud 저장 및 동기화에는 Apple의 이용약관과 개인정보 처리방침이 적용됩니다.
+      en: |
+        When you turn on iCloud backup or tap "Back up now", a file (`my-tally-backup.json`) containing your logs, goals and settings is saved to the `Documents/` folder of the app's iCloud container as plain JSON that the app does not additionally encrypt. You can see it in the Files app. It lives in the iCloud of your own Apple ID, and the developer cannot access it. Only the latest backup is kept. If you turn backup off, the file that was already saved stays there; delete it in the Files app (iCloud Drive > My Tally) if you want it gone. iCloud storage and sync follow Apple's terms and privacy policy.
+  - id: holidays
+    title:
+      ko: "공휴일 파일 수신"
+      en: "Downloading the holiday file"
+    body:
+      ko: |
+        지역을 KR로 설정한 경우에만 앱이 공개 공휴일 JSON 파일(`https://bottega-labs.com/my-tally/holidays-kr.json`)을 https로 내려받습니다. 이때 사용자의 기록이나 식별 정보는 함께 보내지 않습니다. 다만 파일을 제공하는 서버와 이를 호스팅하는 사이트(CDN 포함)는 일반적인 요청 정보(IP 주소, 사용자 에이전트)를 수신할 수 있습니다. 다른 지역에서는 파일을 내려받지 않습니다.
+      en: |
+        Only when your region is set to KR, the app downloads a public holiday JSON file (`https://bottega-labs.com/my-tally/holidays-kr.json`) over https. None of your logs or identifiers are sent. The server that hosts the file, and the hosting site (including any CDN), may receive ordinary request information (IP address and user agent). Other regions do not download it.
+  - id: analytics
+    title:
+      ko: "사용 분석 (Google Firebase Analytics)"
+      en: "Usage analytics (Google Firebase Analytics)"
+    body:
+      ko: |
+        앱 이용 현황을 파악하기 위해 Firebase Analytics를 이용합니다. 앱은 실행 시 분석 수집을 비활성화한 상태로 시작하며, 동의 확인이 끝난 후에만 활성화합니다. 영국·EEA 등 동의가 필요한 지역에서는 Google 동의 화면(UMP)에서 필요한 목적에 동의한 경우에만 활성화되며, 동의가 필요하지 않은 지역에서는 동의 확인이 끝나면 활성화됩니다. 동의 여부를 확인하지 못한 경우에는 활성화하지 않습니다.
+
+        앱이 직접 전송하는 이벤트는 다음과 같습니다.
+        - `tab_viewed`: 화면 이름(history 또는 dashboard)
+        - `log_added`: 기록 종류(time, check, money)
+        - `goal_created`: 목표 기간 유형, 반복 여부
+
+        기록 내용, 금액, 태그 이름, 메모는 보내지 않습니다. 이 밖에 Firebase가 자동으로 수집하는 정보(앱 인스턴스 ID, 기기 모델, OS 버전, 앱 버전, 언어, 대략적인 지역, 앱 실행·세션 정보, 인앱 구매 이벤트가 포함될 수 있음)가 Google로 전송됩니다. 여기에는 이름이나 연락처가 포함되지 않습니다. Firebase 분석 데이터 보관 기간: 2개월. Google의 정보 처리에는 Google 개인정보처리방침이 적용됩니다.
+      en: |
+        The app uses Firebase Analytics to understand how it is used. The app starts with analytics collection switched off and switches it on only after consent has been checked. In regions that require consent (the UK, EEA and others) it is switched on only if you agree to the required purposes in Google's consent form (UMP); elsewhere it is switched on once the check finishes. If consent cannot be checked, it stays off.
+
+        The only events the app sends itself are:
+        - `tab_viewed`: screen name (history or dashboard)
+        - `log_added`: entry type (time, check, money)
+        - `goal_created`: goal period type and whether it repeats
+
+        Entry contents, amounts, tag names and notes are not sent. Firebase also collects some information automatically (app instance ID, device model, OS version, app version, language, approximate region, app launch and session information, and possibly in-app purchase events) and sends it to Google. It does not include your name or contact details. Firebase analytics data retention: 2 months. Google's handling is governed by Google's privacy policy.
+  - id: ads
+    title:
+      ko: "광고 (Google AdMob)"
+      en: "Ads (Google AdMob)"
+    body:
+      ko: |
+        무료 이용 시 광고가 표시됩니다(Pro 구매 시 제거). 광고 요청 시 Google에 IP 주소, 기기 정보, 광고 식별자 관련 정보가 전달될 수 있습니다.
+        - 동의 확인: 동의가 필요한 지역(영국·EEA 등)에서는 Google UMP 동의 화면을 통해 동의를 받습니다. 동의 내용은 앱 설정의 "광고 개인정보 설정"에서 언제든지 변경할 수 있습니다.
+        - iOS 추적 허용(ATT): 광고 동의 후 한 차례 허용 여부를 묻습니다. 허용한 경우 광고 식별자(IDFA)가 맞춤형 광고에 이용될 수 있으며, 이후 설정 > 개인정보 보호 및 보안 > 추적에서 변경할 수 있습니다.
+        - 동의하지 않았거나 추적을 허용하지 않은 경우에는 맞춤형이 아닌 광고만 표시됩니다. 이 경우에도 광고 노출 빈도 제한과 부정 이용 방지를 위해 일부 정보가 이용될 수 있습니다.
+        - 동의 여부를 확인하지 못한 경우에는 광고를 요청하지 않습니다.
+        - 이 앱은 아동을 대상으로 하지 않으며, 광고 요청 시 아동 대상 처리 및 미성년자 동의 태그를 모두 "아니오"로 지정합니다.
+      en: |
+        Ads are shown in the free version (removed with Pro). When an ad is requested, Google may receive your IP address, device information and advertising-identifier-related information.
+        - Consent: in regions that require it (the UK, EEA and others), consent is collected with Google's UMP form. You can change it any time under "Ad privacy settings" in Settings.
+        - iOS tracking permission (ATT): asked once after ad consent. If you allow it, the advertising identifier (IDFA) can be used for personalized ads. You can change it later in Settings > Privacy & Security > Tracking.
+        - If you did not consent or did not allow tracking, only non-personalized ads are shown. Some information may still be used for frequency capping and fraud prevention.
+        - If consent status cannot be determined, no ads are requested.
+        - The app is not directed to children, and ad requests explicitly set both the child-directed and under-age-of-consent tags to false.
+  - id: payments
+    title:
+      ko: "결제"
+      en: "Payments"
+    body:
+      ko: |
+        Pro는 Apple 인앱 결제(StoreKit)를 통해 구매합니다. 카드 등 결제 정보는 Apple이 처리하며, 개발자는 이를 제공받지 않습니다.
+      en: |
+        Pro is purchased with Apple in-app purchase (StoreKit). Apple handles your payment information; the developer does not receive it.
+  - id: export
+    title:
+      ko: "내보내기 및 공유"
+      en: "Export and sharing"
+    body:
+      ko: |
+        - CSV 내보내기(Pro): 공유 시트에서 사용자가 선택한 앱으로 파일이 전달됩니다.
+        - 공유 카드: 목표 요약 카드 이미지는 기기에서 생성되며, 전송할 앱은 사용자가 선택합니다. 카드에는 태그나 금액이 표시될 수 있습니다.
+        두 경우 모두 이후의 처리에는 사용자가 선택한 앱의 정책이 적용됩니다.
+      en: |
+        - CSV export (Pro): the file is handed to the app you choose in the share sheet.
+        - Share card: the goal summary card image is generated on your device and you choose the app to send it to. The card may show tags or amounts.
+        In both cases, what happens next is governed by the app you choose.
+  - id: retention
+    title:
+      ko: "보관 및 파기"
+      en: "Retention and deletion"
+    body:
+      ko: |
+        기기에 저장된 데이터는 앱을 삭제하면 함께 삭제됩니다. iCloud 백업 파일은 파일 앱에서 직접 삭제할 수 있습니다. Google이 수집한 분석·광고 정보는 Google의 정책에 따라 보관됩니다.
+      en: |
+        Data on your device is removed when you delete the app. You can delete the iCloud backup file yourself in the Files app. Analytics and ad information collected by Google is retained under Google's policies.
+  - id: rights
+    title:
+      ko: "이용자의 권리"
+      en: "Your rights"
+    body:
+      ko: |
+        회원 계정이 없어 이름이나 연락처로 이용자를 식별할 수 없습니다. 따라서 열람·삭제·처리정지 요구는 다음 방법으로 행사할 수 있습니다.
+        - 기기 내 데이터: 앱에서 직접 열람·삭제할 수 있으며, 앱을 삭제하면 모두 삭제됩니다.
+        - iCloud 백업: 파일 앱에서 직접 열람·삭제할 수 있습니다.
+        - 분석·광고 식별자: 설정 > 개인정보 보호 및 보안 > 추적에서 추적을 끄거나 광고 식별자를 재설정할 수 있습니다. 앱을 다시 설치하면 새 식별자가 생성되며 이전 식별자와 연결되지 않습니다. 동의가 필요한 지역에서는 앱 설정의 "광고 개인정보 설정"에서 동의를 철회할 수 있습니다.
+        - 기타 문의: <support@bottega-labs.com>
+      en: |
+        There is no account, so you cannot be looked up by name or contact details. You can exercise access, deletion and objection as follows.
+        - Data on your device: view and delete it in the app; deleting the app removes it all.
+        - iCloud backup: view and delete the file in the Files app.
+        - Analytics and advertising identifiers: turn off tracking in Settings > Privacy & Security > Tracking, reset your advertising identifier, or reinstall the app; a new identifier is created and is not linked to the old one. In regions that require consent, withdraw consent under "Ad privacy settings" in the app.
+        - Other requests: <support@bottega-labs.com>
+  - id: children
+    title:
+      ko: "만 14세 미만 아동"
+      en: "Children"
+    body:
+      ko: |
+        이 앱은 만 14세 미만 아동을 대상으로 하지 않습니다. 앱은 이용자의 나이를 알 수 없으며, 만 14세 미만 아동의 개인정보를 알면서 수집하는 일은 없습니다.
+      en: |
+        This app is not directed to children under 13. We cannot know your age, and we do not knowingly collect information from children under 13.
+  - id: officer
+    title:
+      ko: "개인정보 보호책임자"
+      en: "Privacy officer"
+    body:
+      ko: |
+        - 성명/직책: 홍상원 / 대표
+        - 이메일: <support@bottega-labs.com>
+      en: |
+        - Name/title: Sangwon Hong / Representative
+        - Email: <support@bottega-labs.com>
+  - id: transfer
+    title:
+      ko: "개인정보의 국외 이전"
+      en: "International transfer of personal information"
+    body:
+      ko: |
+        - 이전받는 자: Google LLC (미국)
+        - 이전 항목: 앱 인스턴스 ID, 기기 정보, 앱 이용 이벤트, IP 주소(대략적인 위치 추정), 광고 식별자(허용한 경우)
+        - 이전 목적: 사용 분석, 광고 제공 및 광고 성과 측정, 부정 이용 방지
+        - 이전 방법: 앱 실행 중 네트워크를 통한 전송
+        - 보관 기간: 분석 데이터는 2개월, 광고 관련 정보는 Google의 정책에 따름
+        - 거부 방법: 제9항의 방법으로 추적을 끄거나 동의를 철회할 수 있습니다. 광고를 완전히 제거하려면 Pro를 구매하시기 바랍니다.
+      en: |
+        - Recipient: Google LLC (United States)
+        - Items: app instance ID, device information, app usage events, IP address (used to estimate approximate location), advertising identifier (if allowed)
+        - Purpose: usage analytics, ad delivery and measurement, fraud prevention
+        - Method: transmitted over the network while the app is running
+        - Retention: analytics data for 2 months; ad-related information under Google's policies
+        - How to refuse: turn off tracking or withdraw consent as described in section 9. To remove ads entirely, purchase Pro.
+  - id: changes
+    title:
+      ko: "변경 및 문의"
+      en: "Changes and contact"
+    body:
+      ko: |
+        본 방침의 내용이 변경되는 경우 이 페이지와 시행일을 갱신합니다. 문의: <support@bottega-labs.com>
+      en: |
+        When this policy changes, this page and the effective date are updated. Contact: <support@bottega-labs.com>

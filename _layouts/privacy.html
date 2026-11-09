@@ -23,7 +23,12 @@ layout: default
   </div>
 
   <div class="privacy-content">
-    {{ content }}
+    {% assign policy = site.data.privacy[page.app_id] %}
+    {% if policy %}
+      {% include privacy-body.html policy=policy %}
+    {% else %}
+      {{ content }}
+    {% endif %}
   </div>
 
   <div class="privacy-footer">
