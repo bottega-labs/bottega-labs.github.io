@@ -11,16 +11,18 @@ bottega-labs.github.io/
 ├── _config.yml              # site config, supported langs list
 ├── _data/
 │   ├── apps.yml             # app metadata: name, accent, store IDs, features
+│   ├── privacy/<app-id>.yml # privacy policy source (all langs per section) — see below
 │   └── i18n/
 │       ├── ko.yml           # Korean UI strings
 │       └── en.yml           # English UI strings (add ja.yml etc. for new langs)
 ├── _layouts/
 │   ├── default.html         # HTML shell
 │   ├── app.html             # marketing/landing page (data-driven from apps.yml)
-│   └── privacy.html         # privacy policy shell (content from page file)
+│   └── privacy.html         # privacy policy shell (renders _data/privacy/<app-id>.yml if present, else page body)
 ├── _includes/
 │   ├── head.html            # <head> tags + SEO
-│   └── lang-switcher.html   # language toggle buttons (generated from site.langs)
+│   ├── lang-switcher.html   # language toggle buttons (generated from site.langs)
+│   └── privacy-body.html    # renders a privacy yml, one block per lang
 ├── assets/
 │   ├── css/main.css         # all styles, CSS custom properties for theming
 │   ├── js/lang.js           # language switching (localStorage + browser lang)
@@ -28,8 +30,9 @@ bottega-labs.github.io/
 │       └── <app-id>/icon.png
 ├── <app-slug>/
 │   ├── index.html           # frontmatter only: layout, app_id, title, description
-│   └── privacy.html         # layout: privacy + bilingual content using data-lang attrs
+│   └── privacy.html         # frontmatter only when _data/privacy/<app-id>.yml exists
 ├── index.html               # org root — lists all apps from apps.yml
+├── scripts/check-privacy.rb # privacy yml checks (CI: .github/workflows/privacy.yml)
 └── app-ads.txt              # AdMob: one file at root, covers ALL apps on this domain
 ```
 
@@ -74,7 +77,7 @@ Privacy Policy URL: https://bottega-labs.com/<app-slug>/privacy   (Cloudflare se
    description: "<ko tagline>. <en tagline>."
    ---
    ```
-4. **Create `<app-slug>/privacy.html`** — layout + bilingual content:
+4. **Create the privacy policy** — copy the closest app's `_data/privacy/<app-id>.yml` to `_data/privacy/<new-id>.yml` and rewrite every section for the new app, then create `<app-slug>/privacy.html` with frontmatter only:
    ```yaml
    ---
    layout: privacy
@@ -82,7 +85,7 @@ Privacy Policy URL: https://bottega-labs.com/<app-slug>/privacy   (Cloudflare se
    title: "개인정보처리방침 - <App Name>"
    ---
    ```
-   Body: `<div data-lang="ko">...</div>` then `<hr class="privacy-divider">` then `<div data-lang="en">...</div>`
+   Run `ruby scripts/check-privacy.rb`.
 5. **Update Apps table** in this file
 6. Push → deploys in ~1 min
 
@@ -92,9 +95,34 @@ Privacy Policy URL: https://bottega-labs.com/<app-slug>/privacy   (Cloudflare se
 2. Create `_data/i18n/ja.yml` with all keys from `ko.yml`
 3. Add `tagline.ja`, `features.*.title.ja`, `features.*.desc.ja` in `_data/apps.yml`
 4. Add `<span data-lang="ja">...</span>` to layouts where other langs appear
-5. Add `data-lang="ja"` block in each `privacy.html`
+5. Privacy: add `privacy_title`, `privacy_effective`, `privacy_date_format` to `ja.yml`; for each app that ships Japanese, add `ja` to `langs` in its `_data/privacy/<app-id>.yml` and a `ja:` entry to every section's `title` and `body` (the check fails on any missing one). Apps still using a hand-written `privacy.html` need a `data-lang="ja"` block instead.
 
-## Privacy Policy Sections
+## Privacy Policy
+
+### Data-driven policies (`_data/privacy/<app-id>.yml`)
+
+Migrated: my-tally. Others (card-memorizer, notch, tia) still use hand-written `privacy.html` and move over one by one.
+
+```yaml
+effective: 2026-11-06      # one date for all langs; formatted by i18n privacy_date_format
+langs: [ko, en]            # langs this app's policy ships in
+sections:                  # order = numbering
+  - id: summary
+    unnumbered: true       # optional; no number in the heading
+    title: { ko: "요약", en: "Summary" }
+    body:
+      ko: |                # Markdown (rendered with markdownify)
+        - ...
+      en: |
+        - ...
+```
+
+- Each app has its own yml with every section written out. Do not share section text across apps — ad formats, consent flows, processors and data differ, and a shared edit would silently change another app's legal text. Only facts (email, URLs) are shared via `_config.yml`.
+- Korean is written in 합니다체, never 해요체.
+- Write emails as `<support@bottega-labs.com>` (autolink).
+- `scripts/check-privacy.rb` fails on: a section missing any lang in `langs`, an unfilled `[placeholder]`, a lang key not in `langs`, a lang without the i18n privacy keys, a yml without a matching page, or a page that still has body content. `--site _site` also checks the built section count.
+
+### Legacy hand-written pages
 
 **AdMob apps** (card-memorizer, my-tally): 6 sections
 1. 수집하는 개인정보 항목 및 방법 / Information Collection
