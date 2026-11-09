@@ -16,7 +16,7 @@ layout: default
 <div class="privacy-page">
 
   <div class="privacy-header">
-    <a href="../" class="privacy-back">{{ t.back_to_app }}</a>
+    <a href="{{ page.dir | remove_first: "privacy/" }}" class="privacy-back">{{ t.back_to_app }}</a>
     <div class="lang-bar">
       {% for l in policy.langs %}
         {% assign label = site.langs | where: "code", l | first %}
