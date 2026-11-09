@@ -1,0 +1,36 @@
+---
+layout: default
+---
+{% comment %}언어 하나만 그리는 개인정보처리방침. 앱이 설정 언어로 /<app>/privacy/<lang> 를 연다.{% endcomment %}
+{% assign app = site.data.apps | where: "id", page.app_id | first %}
+{% assign policy = site.data.privacy[page.app_id] %}
+{% assign t = site.data.i18n[page.lang] %}
+
+<style>
+  :root {
+    --accent: {{ app.accent }};
+    --accent-rgb: {{ app.accent_rgb }};
+  }
+</style>
+
+<div class="privacy-page">
+
+  <div class="privacy-header">
+    <a href="../" class="privacy-back">{{ t.back_to_app }}</a>
+    <div class="lang-bar">
+      {% for l in policy.langs %}
+        {% assign label = site.langs | where: "code", l | first %}
+        <a class="lang-btn{% if l == page.lang %} active{% endif %}" href="{{ page.dir }}{{ l }}" hreflang="{{ l }}">{{ label.label }}</a>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="privacy-content">
+    {% include privacy-body.html policy=policy langs=page.lang %}
+  </div>
+
+  <div class="privacy-footer">
+    &copy; {{ 'now' | date: "%Y" }} {{ app.name }}. {{ t.all_rights }}
+  </div>
+
+</div>

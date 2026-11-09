@@ -65,6 +65,18 @@ policies.each do |app, p|
     end
   end
 
+  # 언어별 페이지 /<app>/privacy/<lang>.html 이 langs와 정확히 맞아야 한다.
+  lang_pages = Dir[File.join(ROOT, '*', 'privacy', '*.html')].to_h { |p| [p, front_matter(p).first] }
+                                                             .select { |_, fm| fm['app_id'] == app }
+  have = lang_pages.values.map { |fm| fm['lang'] }
+  (langs - have).each { |l| err.("missing <app>/privacy/#{l}.html (layout: privacy-lang, app_id: #{app}, lang: #{l})") }
+  (have - langs).each { |l| err.("privacy/#{l}.html exists but #{l} is not in langs") }
+  lang_pages.each do |path, fm|
+    rel = path.delete_prefix("#{ROOT}/")
+    err.("#{rel} must use layout: privacy-lang") unless fm['layout'] == 'privacy-lang'
+    err.("#{rel} is named #{File.basename(path, '.html')} but has lang: #{fm['lang']}") unless File.basename(path, '.html') == fm['lang']
+  end
+
   linked = pages.select { |_, (fm, _)| fm['layout'] == 'privacy' && fm['app_id'] == app }
   if linked.empty?
     err.('no <app>/privacy.html with layout: privacy and this app_id')
@@ -84,10 +96,15 @@ if (i = ARGV.index('--site'))
     built = File.join(site, File.dirname(path).delete_prefix(ROOT), 'privacy.html')
     next errors << "#{app}: #{built} was not built" unless File.exist?(built)
     html = File.read(built)
-    want = p['sections'].size * p['langs'].size
-    got = html.scan('<h3>').size
-    errors << "#{app}: built page has #{got} sections, expected #{want}" unless got == want
-    errors << "#{app}: built page has unrendered Liquid" if html.include?('{{') || html.include?('{%')
+    errors << "#{app}: #{built} does not redirect to language pages" unless html.include?('location.replace')
+    p['langs'].each do |l|
+      lang_built = File.join(File.dirname(built), 'privacy', "#{l}.html")
+      next errors << "#{app}: #{lang_built} was not built" unless File.exist?(lang_built)
+      lang_html = File.read(lang_built)
+      got = lang_html.scan('<h3>').size
+      errors << "#{app}/#{l}: built page has #{got} sections, expected #{p['sections'].size}" unless got == p['sections'].size
+      errors << "#{app}/#{l}: built page has unrendered Liquid" if lang_html.include?('{{') || lang_html.include?('{%')
+    end
   end
 end
 
