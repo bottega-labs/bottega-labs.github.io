@@ -1,8 +1,10 @@
-{% comment %}_data/privacy/<app-id>.yml을 언어별로 그린다. 번호는 unnumbered가 아닌 조항에 순서대로 붙는다.{% endcomment %}
-{% for lang in include.policy.langs %}
+{% comment %}_data/privacy/<app-id>.yml을 언어별로 그린다. 번호는 unnumbered가 아닌 조항에 순서대로 붙는다.
+  include.langs로 한 언어만 넘기면 data-lang 전환 없이 그 언어만 그린다.{% endcomment %}
+{% if include.langs %}{% assign langs = include.langs | split: "," %}{% else %}{% assign langs = include.policy.langs %}{% endif %}
+{% for lang in langs %}
   {% assign t = site.data.i18n[lang] %}
   {% unless forloop.first %}<hr class="privacy-divider">{% endunless %}
-  <div data-lang="{{ lang }}">
+  <div{% unless include.langs %} data-lang="{{ lang }}"{% endunless %}>
     <h1>{{ t.privacy_title }}</h1>
     <p class="effective-date">{{ t.privacy_effective }}: {{ include.policy.effective | date: t.privacy_date_format }}</p>
     {% assign n = 0 %}

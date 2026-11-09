@@ -25,7 +25,7 @@ layout: default
   <div class="privacy-content">
     {% assign policy = site.data.privacy[page.app_id] %}
     {% if policy %}
-      {% include privacy-body.html policy=policy %}
+      {% include privacy-redirect.html policy=policy %}
     {% else %}
       {{ content }}
     {% endif %}

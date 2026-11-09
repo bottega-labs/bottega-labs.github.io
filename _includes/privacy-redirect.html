@@ -1,0 +1,28 @@
+{% comment %}/<app>/privacy 주소(스토어 등록·앱 링크). ?lang= 이 있으면 그 언어(앱 설정 언어), 없으면 저장된 언어 → 브라우저 언어.
+  방침에 없는 언어면 영어로 보낸다.{% endcomment %}
+{% assign base = page.dir | append: "privacy/" %}
+{% assign fallback = "en" %}
+{% unless include.policy.langs contains "en" %}{% assign fallback = include.policy.langs | first %}{% endunless %}
+<script>
+  (function () {
+    var langs = {{ include.policy.langs | jsonify }};
+    var pick = function (l) { return l && langs.indexOf(l.split('-')[0].toLowerCase()) !== -1 ? l.split('-')[0].toLowerCase() : null; };
+    var fallback = {{ fallback | jsonify }};
+    var asked = new URLSearchParams(location.search).get('lang');
+    var lang;
+    if (asked) {
+      lang = pick(asked) || fallback;
+    } else {
+      var stored = null;
+      try { stored = localStorage.getItem('bl-lang'); } catch (e) {}
+      lang = pick(stored) || pick(navigator.language) || fallback;
+    }
+    location.replace({{ base | jsonify }} + lang);
+  })();
+</script>
+<ul class="privacy-lang-links">
+  {% for l in include.policy.langs %}
+    {% assign label = site.langs | where: "code", l | first %}
+    <li><a href="{{ base }}{{ l }}" hreflang="{{ l }}">{{ site.data.i18n[l].privacy_title }} ({{ label.label }})</a></li>
+  {% endfor %}
+</ul>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="{{ page.lang | default: 'ko' }}"{% if page.lang %} data-lang-fixed{% endif %}>
 <head>
   {% include head.html %}
 </head>

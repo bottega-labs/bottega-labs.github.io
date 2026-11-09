@@ -18,11 +18,13 @@ bottega-labs.github.io/
 ├── _layouts/
 │   ├── default.html         # HTML shell
 │   ├── app.html             # marketing/landing page (data-driven from apps.yml)
-│   └── privacy.html         # privacy policy shell (renders _data/privacy/<app-id>.yml if present, else page body)
+│   ├── privacy.html         # privacy policy shell (redirects to language pages if _data/privacy/<app-id>.yml exists, else page body)
+│   └── privacy-lang.html    # one-language privacy page (/<app>/privacy/<lang>)
 ├── _includes/
 │   ├── head.html            # <head> tags + SEO
 │   ├── lang-switcher.html   # language toggle buttons (generated from site.langs)
-│   └── privacy-body.html    # renders a privacy yml, one block per lang
+│   ├── privacy-body.html    # renders a privacy yml (one lang, or all with data-lang)
+│   └── privacy-redirect.html # /<app>/privacy → /<app>/privacy/<lang>
 ├── assets/
 │   ├── css/main.css         # all styles, CSS custom properties for theming
 │   ├── js/lang.js           # language switching (localStorage + browser lang)
@@ -30,7 +32,8 @@ bottega-labs.github.io/
 │       └── <app-id>/icon.png
 ├── <app-slug>/
 │   ├── index.html           # frontmatter only: layout, app_id, title, description
-│   └── privacy.html         # frontmatter only when _data/privacy/<app-id>.yml exists
+│   ├── privacy.html         # frontmatter only when _data/privacy/<app-id>.yml exists
+│   └── privacy/<lang>.html  # frontmatter only: layout privacy-lang, app_id, lang — one per lang in the yml
 ├── index.html               # org root — lists all apps from apps.yml
 ├── scripts/check-privacy.rb # privacy yml checks (CI: .github/workflows/privacy.yml)
 └── app-ads.txt              # AdMob: one file at root, covers ALL apps on this domain
@@ -77,7 +80,7 @@ Privacy Policy URL: https://bottega-labs.com/<app-slug>/privacy   (Cloudflare se
    description: "<ko tagline>. <en tagline>."
    ---
    ```
-4. **Create the privacy policy** — copy the closest app's `_data/privacy/<app-id>.yml` to `_data/privacy/<new-id>.yml` and rewrite every section for the new app, then create `<app-slug>/privacy.html` with frontmatter only:
+4. **Create the privacy policy** — copy the closest app's `_data/privacy/<app-id>.yml` to `_data/privacy/<new-id>.yml` and rewrite every section for the new app, then create `<app-slug>/privacy.html` with frontmatter only (and `<app-slug>/privacy/<lang>.html` per lang — copy my-tally's):
    ```yaml
    ---
    layout: privacy
@@ -101,7 +104,12 @@ Privacy Policy URL: https://bottega-labs.com/<app-slug>/privacy   (Cloudflare se
 
 ### Data-driven policies (`_data/privacy/<app-id>.yml`)
 
-Migrated: my-tally. Others (card-memorizer, notch, tia) still use hand-written `privacy.html` and move over one by one.
+Migrated: my-tally.
+
+URLs:
+- `/<app>/privacy/<lang>` — one language. Apps link here or to the redirect below.
+- `/<app>/privacy` (store-registered) — redirects: `?lang=<code>` (the app's setting language) wins; otherwise saved site language → browser language. A language not in `langs` goes to `en`.
+- Apps should open `https://bottega-labs.com/<app>/privacy?lang=<app locale>` so the site, not the app, decides the fallback. Others (card-memorizer, notch, tia) still use hand-written `privacy.html` and move over one by one.
 
 ```yaml
 effective: 2026-11-06      # one date for all langs; formatted by i18n privacy_date_format
@@ -120,7 +128,7 @@ sections:                  # order = numbering
 - Each app has its own yml with every section written out. Do not share section text across apps — ad formats, consent flows, processors and data differ, and a shared edit would silently change another app's legal text. Only facts (email, URLs) are shared via `_config.yml`.
 - Korean is written in 합니다체, never 해요체.
 - Write emails as `<support@bottega-labs.com>` (autolink).
-- `scripts/check-privacy.rb` fails on: a section missing any lang in `langs`, an unfilled `[placeholder]`, a lang key not in `langs`, a lang without the i18n privacy keys, a yml without a matching page, or a page that still has body content. a sweeping claim such as "전송하지 않" or "do not collect" (say exactly what is not sent). `--site _site` also checks the built section count.
+- `scripts/check-privacy.rb` fails on: a section missing any lang in `langs`, an unfilled `[placeholder]`, a lang key not in `langs`, a lang without the i18n privacy keys, a yml without a matching page, a page that still has body content, or `privacy/<lang>.html` pages that do not match `langs` exactly. a sweeping claim such as "전송하지 않" or "do not collect" (say exactly what is not sent). `--site _site` also checks the built section count.
 
 ### Legacy hand-written pages
 

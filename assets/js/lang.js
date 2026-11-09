@@ -26,6 +26,8 @@
   };
 
   document.addEventListener('DOMContentLoaded', function () {
+    // 언어별 페이지는 언어가 정해져 있다.
+    if (document.documentElement.hasAttribute('data-lang-fixed')) return;
     applyLang(getLang());
   });
 })();
