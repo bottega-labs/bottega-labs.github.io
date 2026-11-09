@@ -11,6 +11,13 @@ ROOT = File.expand_path('..', __dir__)
 I18N_KEYS = %w[privacy_title privacy_effective privacy_date_format].freeze
 # Markdown 링크 [text](url)가 아닌 대괄호는 채우지 않은 빈칸으로 본다.
 PLACEHOLDER = /\[[^\]\n]*\](?!\()/
+# 실제 동작과 어긋나기 쉬운 넓은 부정·단정 표현. 무엇을 보내지 않는지 구체적으로 쓴다.
+BANNED = [
+  /어떤\s*서버/, /어떠한\s*서버/, /전송하지\s*않/, /수집하지\s*않/, /기기에만/, /외부로\s*나가지\s*않/,
+  /never\s+(sent|leaves?|transmitted|uploaded)/i, /not\s+(sent|transmitted|uploaded)\s+to\s+any/i,
+  /no\s+data\s+(is\s+|are\s+)?(sent|transmitted|shared|collected)/i, /100\s*%\s*offline/i,
+  /we\s+never\s+share/i, /only\s+on\s+your\s+device/i, /do\s+not\s+collect/i
+].freeze
 
 def load_yaml(path) = YAML.load_file(path, permitted_classes: [Date])
 
@@ -49,6 +56,8 @@ policies.each do |app, p|
           err.("#{s['id']}.#{field}.#{l} is missing")
         elsif (hit = v[PLACEHOLDER])
           err.("#{s['id']}.#{field}.#{l} has an unfilled placeholder #{hit}")
+        elsif (re = BANNED.find { |r| v.match?(r) })
+          err.("#{s['id']}.#{field}.#{l} has a sweeping claim #{v[re].inspect}; say exactly what is not sent")
         end
       end
       extra = (s[field] || {}).keys - langs

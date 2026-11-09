@@ -120,7 +120,7 @@ sections:                  # order = numbering
 - Each app has its own yml with every section written out. Do not share section text across apps — ad formats, consent flows, processors and data differ, and a shared edit would silently change another app's legal text. Only facts (email, URLs) are shared via `_config.yml`.
 - Korean is written in 합니다체, never 해요체.
 - Write emails as `<support@bottega-labs.com>` (autolink).
-- `scripts/check-privacy.rb` fails on: a section missing any lang in `langs`, an unfilled `[placeholder]`, a lang key not in `langs`, a lang without the i18n privacy keys, a yml without a matching page, or a page that still has body content. `--site _site` also checks the built section count.
+- `scripts/check-privacy.rb` fails on: a section missing any lang in `langs`, an unfilled `[placeholder]`, a lang key not in `langs`, a lang without the i18n privacy keys, a yml without a matching page, or a page that still has body content. a sweeping claim such as "전송하지 않" or "do not collect" (say exactly what is not sent). `--site _site` also checks the built section count.
 
 ### Legacy hand-written pages
 
